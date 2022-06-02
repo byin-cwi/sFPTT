@@ -1,0 +1,3 @@
+person 249 48 421 375
+tvmonitor 61 244 169 360
+car 412 187 500 229 difficult

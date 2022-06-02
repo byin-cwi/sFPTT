@@ -1,0 +1,4 @@
+person 1 6 160 166
+person 157 19 481 357
+sofa 104 72 500 357 difficult
+bottle 1 94 43 357

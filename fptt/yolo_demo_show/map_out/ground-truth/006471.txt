@@ -1,0 +1,21 @@
+person 61 39 95 80
+person 216 55 232 78 difficult
+person 100 58 121 91
+person 189 216 210 248 difficult
+person 151 272 181 304 difficult
+person 148 238 183 276 difficult
+person 185 257 213 291 difficult
+person 192 351 219 373 difficult
+person 255 241 271 266 difficult
+person 255 157 278 186
+person 298 114 311 151
+person 337 188 358 221 difficult
+person 349 252 372 283
+person 319 255 335 284 difficult
+person 339 284 354 309 difficult
+person 337 53 351 79 difficult
+person 295 54 308 82 difficult
+person 274 41 288 73 difficult
+person 318 46 333 71 difficult
+person 295 37 313 66 difficult
+person 284 30 295 48 difficult

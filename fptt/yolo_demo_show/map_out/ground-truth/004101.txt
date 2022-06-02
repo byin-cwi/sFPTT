@@ -1,0 +1,5 @@
+sofa 3 199 374 500
+person 3 173 235 305
+bicycle 2 120 62 263 difficult
+bicycle 6 115 83 254 difficult
+bicycle 40 114 119 245 difficult

@@ -1,0 +1,8 @@
+chair 172 223 210 266 difficult
+chair 207 224 236 265
+chair 281 223 313 261
+chair 248 223 283 262 difficult
+pottedplant 121 182 175 268
+pottedplant 320 224 339 259
+pottedplant 221 197 288 259
+person 43 188 85 298

@@ -1,0 +1,3 @@
+chair 213 1 446 316
+person 96 25 309 336
+tvmonitor 1 1 79 266 difficult

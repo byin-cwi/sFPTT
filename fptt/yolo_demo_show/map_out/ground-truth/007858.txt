@@ -1,0 +1,6 @@
+bus 369 45 480 161
+person 409 96 458 214
+person 342 98 381 199
+person 318 116 334 166 difficult
+person 308 118 319 166 difficult
+bus 474 97 493 155

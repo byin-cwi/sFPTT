@@ -1,0 +1,3 @@
+bottle 422 153 430 177 difficult
+bottle 403 151 412 178 difficult
+sofa 366 184 500 375

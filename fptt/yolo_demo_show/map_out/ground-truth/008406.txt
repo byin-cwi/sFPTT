@@ -1,0 +1,3 @@
+bicycle 432 312 462 321 difficult
+person 440 288 456 319 difficult
+bus 134 266 335 335

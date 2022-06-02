@@ -1,0 +1,4 @@
+dog 291 258 408 361
+chair 323 72 433 280
+chair 138 172 317 354 difficult
+person 1 43 339 375

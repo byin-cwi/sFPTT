@@ -1,0 +1,5 @@
+person 294 108 500 375
+person 132 138 330 375
+person 1 36 271 375
+bottle 439 122 461 157
+pottedplant 378 97 411 142 difficult

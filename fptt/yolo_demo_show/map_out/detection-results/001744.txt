@@ -1,0 +1,9 @@
+motorbike 0.5313 159 32 349 143
+motorbike 0.0086 133 5 442 144
+motorbike 0.0025 249 36 320 87
+motorbike 0.0012 249 46 382 129
+person 0.0010 0 -1 25 37
+pottedplant 0.0013 4 2 41 33
+train 0.0023 3 7 42 37
+train 0.0020 0 4 28 42
+train 0.0016 -2 4 114 33

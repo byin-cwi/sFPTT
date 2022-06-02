@@ -1,0 +1,5 @@
+bicycle 15 51 454 318
+diningtable 40 288 438 375 difficult
+chair 402 255 466 375 difficult
+chair 100 233 196 298 difficult
+chair 2 252 88 375 difficult

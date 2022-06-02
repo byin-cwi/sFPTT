@@ -1,0 +1,3 @@
+dog 71 99 227 333
+dog 236 236 358 333
+chair 8 1 97 61 difficult

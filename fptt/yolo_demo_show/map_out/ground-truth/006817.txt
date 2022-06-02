@@ -1,0 +1,6 @@
+tvmonitor 170 110 227 195
+tvmonitor 226 111 302 195
+tvmonitor 334 105 391 196
+tvmonitor 1 156 26 237 difficult
+motorbike 404 82 459 113 difficult
+car 406 43 443 59 difficult

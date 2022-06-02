@@ -1,0 +1,4 @@
+sofa 26 231 186 373 difficult
+sofa 391 190 500 272 difficult
+bottle 373 231 383 278 difficult
+bicycle 390 79 426 135

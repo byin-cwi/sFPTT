@@ -1,0 +1,5 @@
+sofa 192 182 341 270
+sofa 143 202 201 344
+tvmonitor 364 206 423 299 difficult
+car 193 139 341 192 difficult
+car 180 135 205 188 difficult

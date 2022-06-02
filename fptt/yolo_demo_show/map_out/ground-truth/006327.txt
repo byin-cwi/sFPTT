@@ -1,0 +1,8 @@
+bus 44 61 237 342
+person 311 219 334 310
+person 301 226 315 294 difficult
+person 279 231 297 283
+person 266 229 283 293
+car 288 230 307 242 difficult
+car 2 236 47 253 difficult
+car 1 240 26 263 difficult

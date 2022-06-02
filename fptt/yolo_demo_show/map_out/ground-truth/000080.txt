@@ -1,0 +1,9 @@
+boat 440 226 455 261 difficult
+boat 398 216 421 306 difficult
+boat 307 229 320 259 difficult
+boat 246 202 269 282
+boat 187 223 209 287 difficult
+boat 186 202 210 263 difficult
+boat 70 243 111 274
+boat 1 276 38 300 difficult
+boat 12 240 33 258 difficult

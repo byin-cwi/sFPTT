@@ -1,0 +1,3 @@
+cat 47 175 297 463
+person 1 99 347 500
+car 327 139 374 210 difficult

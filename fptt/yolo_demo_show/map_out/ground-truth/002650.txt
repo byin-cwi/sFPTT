@@ -1,0 +1,4 @@
+sofa 1 134 159 363
+chair 320 98 394 209
+chair 221 75 311 204
+car 323 32 357 51 difficult

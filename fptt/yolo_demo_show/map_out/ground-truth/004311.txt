@@ -1,0 +1,6 @@
+bottle 221 146 241 205 difficult
+bottle 253 166 271 204
+bottle 271 158 284 202
+bottle 284 176 296 202 difficult
+pottedplant 281 115 355 196
+person 71 44 221 487

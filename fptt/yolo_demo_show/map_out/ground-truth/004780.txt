@@ -1,0 +1,13 @@
+car 158 383 263 451
+car 19 383 147 426
+pottedplant 109 390 142 446
+pottedplant 44 386 74 429
+pottedplant 96 187 114 207 difficult
+pottedplant 118 179 131 198 difficult
+pottedplant 138 167 156 186 difficult
+pottedplant 89 278 109 297 difficult
+pottedplant 110 270 130 291 difficult
+pottedplant 212 193 266 288
+pottedplant 188 110 216 153 difficult
+motorbike 297 404 354 450 difficult
+chair 296 426 320 464 difficult

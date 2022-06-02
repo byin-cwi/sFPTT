@@ -1,0 +1,2 @@
+bicycle 58 62 487 337
+tvmonitor 461 79 487 114 difficult

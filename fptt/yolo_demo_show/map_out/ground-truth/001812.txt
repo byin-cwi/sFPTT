@@ -1,0 +1,6 @@
+pottedplant 466 273 500 339
+pottedplant 427 264 465 302 difficult
+pottedplant 269 239 362 353
+person 238 124 323 296
+bottle 408 256 422 298 difficult
+pottedplant 1 298 40 330 difficult

@@ -1,0 +1,2 @@
+horse 119 112 213 429
+person 99 106 237 281 difficult

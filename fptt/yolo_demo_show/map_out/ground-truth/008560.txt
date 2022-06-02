@@ -1,0 +1,6 @@
+person 391 235 488 335
+car 433 200 500 304
+car 422 186 500 242 difficult
+car 397 183 454 241
+bicycle 29 198 47 226 difficult
+person 259 129 283 164

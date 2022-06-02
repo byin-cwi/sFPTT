@@ -1,0 +1,7 @@
+tvmonitor 135 88 259 198
+chair 377 140 475 255
+chair 347 238 500 332
+person 174 119 200 173
+car 421 25 444 34 difficult
+car 409 30 436 43 difficult
+car 382 27 407 39 difficult

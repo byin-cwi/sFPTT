@@ -1,0 +1,5 @@
+bus 104 82 320 266
+bus 309 220 500 374 difficult
+bus 232 29 323 75 difficult
+bus 334 33 498 96 difficult
+bus 33 39 69 78 difficult

@@ -1,0 +1,2 @@
+person 241 148 358 301
+tvmonitor 3 169 132 278 difficult

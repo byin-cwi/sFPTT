@@ -1,0 +1,12 @@
+bottle 189 131 196 160 difficult
+chair 1 359 81 400 difficult
+chair 408 270 500 400
+chair 278 274 375 340 difficult
+chair 197 261 277 312 difficult
+chair 107 261 178 301 difficult
+chair 16 248 78 286 difficult
+pottedplant 47 269 114 339 difficult
+diningtable 1 294 415 400
+bottle 345 161 355 185 difficult
+bottle 334 163 344 187 difficult
+bottle 180 128 187 163 difficult

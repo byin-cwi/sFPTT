@@ -1,0 +1,4 @@
+horse 255 122 401 259
+bird 107 230 133 279 difficult
+bottle 463 197 473 227
+pottedplant 434 168 500 284

@@ -1,0 +1,4 @@
+chair 388 72 458 201
+chair 327 102 419 252
+sofa 76 100 303 281 difficult
+tvmonitor 324 50 372 109

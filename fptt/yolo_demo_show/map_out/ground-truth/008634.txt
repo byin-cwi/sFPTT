@@ -1,0 +1,2 @@
+person 472 163 500 365 difficult
+person 418 123 471 279

@@ -1,0 +1,6 @@
+bird 327 142 384 197
+bird 220 137 263 210
+boat 377 69 443 77 difficult
+boat 38 89 93 128 difficult
+boat 43 65 103 93 difficult
+boat 189 63 396 169

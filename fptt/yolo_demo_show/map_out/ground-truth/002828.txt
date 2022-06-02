@@ -1,0 +1,3 @@
+horse 10 26 376 265
+horse 128 127 318 246 difficult
+horse 309 52 374 102 difficult

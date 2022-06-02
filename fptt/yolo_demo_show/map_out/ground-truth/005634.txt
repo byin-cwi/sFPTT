@@ -1,0 +1,2 @@
+bird 192 202 247 238 difficult
+person 273 54 435 307

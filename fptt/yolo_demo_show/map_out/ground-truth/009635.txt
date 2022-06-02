@@ -1,0 +1,2 @@
+sofa 12 386 253 497
+chair 255 370 320 470 difficult

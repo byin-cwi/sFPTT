@@ -1,0 +1,3 @@
+car 414 96 500 234 difficult
+motorbike 44 62 479 321
+person 146 96 277 331

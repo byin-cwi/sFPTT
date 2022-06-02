@@ -1,0 +1,5 @@
+bottle 202 11 280 213
+person 30 330 92 451 difficult
+person 70 64 170 222
+person 282 71 342 176
+person 88 356 193 480 difficult

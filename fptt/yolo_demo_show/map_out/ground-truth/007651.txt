@@ -1,0 +1,2 @@
+person 76 111 261 262
+diningtable 2 257 355 500 difficult

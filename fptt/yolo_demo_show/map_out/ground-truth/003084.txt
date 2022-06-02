@@ -1,0 +1,12 @@
+person 222 111 259 207
+person 139 154 165 220
+person 94 152 110 214
+person 68 157 86 206
+person 361 166 385 224
+person 413 165 433 225
+person 458 173 486 225
+dog 419 188 459 224 difficult
+dog 97 208 137 225 difficult
+dog 58 216 91 226 difficult
+dog 35 211 77 232 difficult
+horse 188 154 334 250

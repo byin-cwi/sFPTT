@@ -1,0 +1,6 @@
+aeroplane 200 175 220 201
+aeroplane 201 207 217 228
+aeroplane 196 227 213 252 difficult
+aeroplane 199 237 216 259 difficult
+aeroplane 193 260 211 283
+aeroplane 186 285 202 310

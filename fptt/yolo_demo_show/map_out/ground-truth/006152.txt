@@ -1,0 +1,13 @@
+person 397 10 500 375
+person 363 52 487 375
+person 326 75 390 195
+person 238 58 384 375
+person 99 32 273 375
+person 1 55 109 375
+bottle 83 16 104 82 difficult
+bottle 66 17 88 82 difficult
+bottle 51 17 66 82 difficult
+bottle 29 13 49 61 difficult
+bottle 13 10 30 64 difficult
+bottle 5 15 16 62 difficult
+person 311 34 357 85

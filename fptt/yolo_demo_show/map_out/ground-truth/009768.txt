@@ -1,0 +1,8 @@
+cow 307 170 337 234 difficult
+cow 52 168 94 235
+cow 199 170 234 232 difficult
+cow 227 170 251 229 difficult
+cow 119 162 201 239
+horse 345 131 426 256
+person 351 96 406 209
+car 77 161 121 173 difficult

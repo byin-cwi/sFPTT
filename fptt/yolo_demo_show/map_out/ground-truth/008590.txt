@@ -1,0 +1,10 @@
+boat 328 228 421 324
+boat 424 248 461 281 difficult
+boat 334 213 374 251 difficult
+boat 318 240 358 266 difficult
+bird 444 230 484 259 difficult
+bird 107 230 132 244 difficult
+bird 199 231 219 244 difficult
+bird 183 222 210 234 difficult
+bird 255 223 276 239 difficult
+bird 283 222 298 238 difficult

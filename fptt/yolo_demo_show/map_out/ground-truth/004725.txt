@@ -1,0 +1,7 @@
+person 379 2 425 148 difficult
+person 415 66 500 374 difficult
+person 189 2 290 128 difficult
+person 336 1 378 53 difficult
+person 189 85 381 320
+motorbike 5 38 143 80 difficult
+motorbike 8 57 470 375

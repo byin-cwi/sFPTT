@@ -1,0 +1,2 @@
+diningtable 2 136 375 500 difficult
+bottle 207 15 316 499

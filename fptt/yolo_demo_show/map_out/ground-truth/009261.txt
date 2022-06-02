@@ -1,0 +1,4 @@
+pottedplant 80 182 221 375 difficult
+car 270 311 296 330
+bus 366 281 412 329 difficult
+car 462 282 479 298 difficult

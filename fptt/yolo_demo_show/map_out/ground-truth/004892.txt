@@ -1,0 +1,15 @@
+chair 357 168 418 275
+chair 309 164 358 184 difficult
+chair 252 170 298 184 difficult
+chair 197 173 242 185 difficult
+chair 147 175 189 190 difficult
+chair 82 184 107 209 difficult
+chair 60 192 91 220 difficult
+chair 17 209 53 238 difficult
+chair 1 221 17 248 difficult
+chair 273 186 338 277
+chair 190 202 252 280
+chair 140 209 195 284
+chair 121 240 163 287 difficult
+diningtable 1 279 443 375
+diningtable 2 179 441 375

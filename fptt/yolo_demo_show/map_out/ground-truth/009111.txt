@@ -1,0 +1,4 @@
+bus 152 65 430 270
+bus 424 139 457 220 difficult
+car 457 172 489 196
+motorbike 137 197 153 238 difficult

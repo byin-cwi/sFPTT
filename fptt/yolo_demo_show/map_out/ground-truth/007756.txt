@@ -1,0 +1,3 @@
+chair 333 269 440 375
+chair 8 277 227 375 difficult
+person 70 242 193 375

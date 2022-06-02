@@ -1,0 +1,2 @@
+sofa 14 104 479 321
+bottle 394 337 434 375 difficult

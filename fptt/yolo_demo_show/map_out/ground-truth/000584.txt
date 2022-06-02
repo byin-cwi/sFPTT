@@ -1,0 +1,2 @@
+bicycle 31 74 369 346
+sofa 344 207 500 374 difficult

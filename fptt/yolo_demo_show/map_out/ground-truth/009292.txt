@@ -1,0 +1,3 @@
+aeroplane 1 7 326 472
+person 245 458 274 493
+person 305 468 327 494 difficult

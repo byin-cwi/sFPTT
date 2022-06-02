@@ -1,0 +1,4 @@
+tvmonitor 89 141 166 189
+tvmonitor 1 138 135 272
+tvmonitor 86 149 331 240
+tvmonitor 1 217 452 281 difficult

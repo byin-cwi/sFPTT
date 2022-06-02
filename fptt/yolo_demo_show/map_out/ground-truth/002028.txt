@@ -1,0 +1,2 @@
+bird 249 214 327 253
+bird 359 242 390 268 difficult

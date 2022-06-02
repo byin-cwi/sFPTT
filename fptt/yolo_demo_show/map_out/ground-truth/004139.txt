@@ -1,0 +1,3 @@
+chair 42 63 461 373
+chair 360 22 430 135 difficult
+chair 429 30 500 233 difficult

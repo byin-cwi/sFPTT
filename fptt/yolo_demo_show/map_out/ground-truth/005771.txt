@@ -1,0 +1,32 @@
+boat 73 179 105 192 difficult
+boat 83 116 111 154 difficult
+boat 4 104 19 122 difficult
+boat 29 113 45 122 difficult
+boat 51 101 68 124 difficult
+boat 57 102 72 112 difficult
+boat 85 101 89 112 difficult
+boat 82 104 98 125 difficult
+boat 104 101 114 111 difficult
+boat 105 103 123 125 difficult
+boat 134 104 153 126 difficult
+boat 153 104 164 122 difficult
+boat 159 106 172 125 difficult
+boat 160 110 183 120 difficult
+boat 191 101 207 127
+boat 226 104 241 126 difficult
+boat 236 99 251 121 difficult
+boat 246 107 268 133 difficult
+boat 264 103 284 126 difficult
+boat 291 106 307 128 difficult
+boat 332 104 351 127 difficult
+boat 377 96 399 122 difficult
+boat 410 103 432 127 difficult
+boat 420 103 435 124 difficult
+boat 442 108 458 127 difficult
+boat 334 109 380 155
+boat 235 195 276 219
+boat 122 133 150 170 difficult
+boat 216 219 270 247
+boat 300 122 318 149 difficult
+boat 383 121 403 145 difficult
+boat 153 151 176 161 difficult

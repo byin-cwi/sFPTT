@@ -1,0 +1,3 @@
+dog 1 223 193 448
+cat 2 135 144 270 difficult
+person 96 44 336 448

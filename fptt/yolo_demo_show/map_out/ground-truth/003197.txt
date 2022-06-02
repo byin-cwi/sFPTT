@@ -1,0 +1,2 @@
+sofa 1 119 407 375 difficult
+person 2 86 404 375

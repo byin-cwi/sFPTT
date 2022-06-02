@@ -1,0 +1,4 @@
+pottedplant 345 257 369 311
+pottedplant 72 255 128 302
+pottedplant 36 146 84 308
+pottedplant 274 144 309 180 difficult

@@ -1,0 +1,4 @@
+sofa 252 156 362 224
+sofa 356 163 497 283 difficult
+pottedplant 75 167 145 250
+tvmonitor 138 132 213 200

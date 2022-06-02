@@ -1,0 +1,5 @@
+aeroplane 93 68 182 92 difficult
+aeroplane 157 73 284 107 difficult
+aeroplane 194 78 344 116 difficult
+aeroplane 15 80 306 142
+aeroplane 26 49 486 212

@@ -1,0 +1,4 @@
+car 329 339 375 493 difficult
+person 297 341 347 500
+car 227 373 315 429 difficult
+car 1 334 68 500 difficult

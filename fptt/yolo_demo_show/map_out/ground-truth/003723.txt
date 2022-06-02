@@ -1,0 +1,4 @@
+train 230 99 384 248
+person 390 163 423 220
+person 429 174 459 209
+motorbike 390 192 424 230 difficult

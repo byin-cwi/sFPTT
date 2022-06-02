@@ -1,0 +1,7 @@
+sofa 1 127 150 242 difficult
+chair 179 248 280 323 difficult
+person 160 118 290 337
+bottle 100 210 111 234 difficult
+person 62 45 83 69
+person 86 45 112 69
+person 1 57 29 88 difficult

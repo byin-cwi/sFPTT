@@ -1,0 +1,9 @@
+bird 179 198 212 272 difficult
+bird 216 161 248 216 difficult
+bird 185 133 234 191
+bird 176 170 211 208
+bird 252 201 332 259 difficult
+bird 226 43 251 71 difficult
+bird 251 50 275 85 difficult
+bird 288 81 306 120 difficult
+bird 304 61 336 93 difficult

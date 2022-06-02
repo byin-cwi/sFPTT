@@ -1,0 +1,6 @@
+sheep 130 166 257 233
+sheep 141 151 231 191
+sheep 193 75 215 87 difficult
+sheep 310 85 334 105
+sheep 463 98 493 116 difficult
+bird 426 258 500 339

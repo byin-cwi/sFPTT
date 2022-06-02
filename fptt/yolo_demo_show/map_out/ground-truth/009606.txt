@@ -1,0 +1,7 @@
+diningtable 39 320 375 500
+pottedplant 175 305 238 351 difficult
+chair 77 329 227 500
+chair 234 297 298 343 difficult
+chair 29 278 96 462
+chair 259 367 375 500
+pottedplant 79 224 140 277

@@ -1,0 +1,20 @@
+bottle 488 111 499 155 difficult
+bottle 475 111 489 154 difficult
+bottle 464 110 474 153 difficult
+bottle 453 110 465 153
+bottle 493 167 500 215 difficult
+bottle 481 168 493 215 difficult
+bottle 473 169 482 213 difficult
+bottle 463 164 472 209 difficult
+bottle 456 163 464 209 difficult
+bottle 442 164 458 209
+person 275 119 422 315
+person 245 143 298 237
+person 109 92 271 333
+person 2 102 178 331
+bottle 358 30 366 64 difficult
+bottle 365 26 370 61 difficult
+bottle 370 25 378 60 difficult
+bottle 377 22 387 62 difficult
+bottle 390 18 401 61 difficult
+bottle 401 15 412 59 difficult

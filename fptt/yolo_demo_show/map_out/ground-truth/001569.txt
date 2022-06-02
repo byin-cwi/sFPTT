@@ -1,0 +1,6 @@
+bottle 5 274 43 394
+bottle 60 312 114 411
+person 88 45 305 335
+diningtable 2 327 375 500 difficult
+car 260 130 344 167
+car 1 136 132 177 difficult

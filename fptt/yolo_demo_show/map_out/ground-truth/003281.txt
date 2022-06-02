@@ -1,0 +1,11 @@
+pottedplant 2 110 21 208
+pottedplant 22 122 75 208
+pottedplant 75 154 115 217
+pottedplant 177 288 204 358
+pottedplant 195 284 220 351
+pottedplant 210 235 237 400
+pottedplant 236 230 245 384 difficult
+pottedplant 245 238 259 373
+pottedplant 259 204 276 356 difficult
+pottedplant 180 354 207 407 difficult
+pottedplant 175 220 214 261 difficult

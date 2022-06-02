@@ -1,0 +1,3 @@
+dog 135 100 352 295
+pottedplant 309 1 397 117
+diningtable 105 105 500 333 difficult

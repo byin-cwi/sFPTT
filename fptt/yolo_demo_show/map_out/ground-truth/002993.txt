@@ -1,0 +1,2 @@
+car 206 221 339 303
+person 165 1 210 37 difficult

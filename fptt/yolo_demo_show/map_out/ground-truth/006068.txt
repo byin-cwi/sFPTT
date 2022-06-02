@@ -1,0 +1,2 @@
+tvmonitor 4 147 111 268
+sofa 230 191 331 316 difficult

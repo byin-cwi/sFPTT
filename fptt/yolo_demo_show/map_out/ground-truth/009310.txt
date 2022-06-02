@@ -1,0 +1,4 @@
+cat 176 128 259 240
+tvmonitor 86 53 214 161
+chair 111 172 497 374 difficult
+chair 1 189 119 323

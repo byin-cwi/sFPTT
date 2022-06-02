@@ -1,0 +1,2 @@
+sofa 1 13 397 380 difficult
+dog 49 138 357 312

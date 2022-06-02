@@ -1,0 +1,2 @@
+cat 234 78 342 197
+diningtable 2 206 500 375 difficult

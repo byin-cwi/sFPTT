@@ -1,0 +1,2 @@
+sofa 252 202 451 342
+sofa 8 294 500 375 difficult

@@ -1,0 +1,5 @@
+person 79 133 194 405
+sheep 175 202 337 404 difficult
+sheep 246 129 363 263
+car 67 20 165 69
+car 4 23 91 83 difficult

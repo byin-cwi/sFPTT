@@ -1,0 +1,22 @@
+car 242 232 461 312
+car 10 258 249 347
+car 12 177 104 209
+car 151 184 251 227
+car 226 188 343 231
+car 294 180 371 206
+car 401 172 482 212
+car 462 177 491 209 difficult
+car 221 174 298 190 difficult
+car 106 174 173 201 difficult
+person 428 154 442 177 difficult
+person 441 150 455 172 difficult
+person 454 153 470 173 difficult
+person 224 152 235 176 difficult
+person 210 149 222 174 difficult
+person 135 171 146 229
+person 135 154 147 173 difficult
+person 146 172 160 199 difficult
+person 168 170 187 191 difficult
+person 186 167 206 184 difficult
+person 217 167 233 185 difficult
+person 64 160 83 181 difficult

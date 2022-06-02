@@ -1,0 +1,4 @@
+dog 25 156 263 335
+person 1 10 215 375
+bottle 391 157 407 211
+bottle 410 174 423 220 difficult

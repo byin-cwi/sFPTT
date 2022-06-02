@@ -1,0 +1,5 @@
+aeroplane 1 58 458 308
+pottedplant 165 258 174 287 difficult
+pottedplant 150 259 159 279 difficult
+car 284 239 325 263
+bus 426 201 500 231

@@ -1,0 +1,16 @@
+horse 1 112 31 159 difficult
+horse 42 122 180 262
+horse 138 141 221 260
+horse 168 122 317 252
+horse 266 135 341 247
+horse 348 137 427 246
+horse 323 132 371 250
+horse 432 150 480 245 difficult
+car 310 103 389 125
+person 79 84 123 209
+person 129 102 151 137
+person 213 92 249 198
+person 285 109 310 200 difficult
+person 301 101 325 150 difficult
+person 345 112 364 136
+person 462 106 480 199 difficult

@@ -1,0 +1,3 @@
+chair 77 70 162 222
+chair 290 77 422 290
+tvmonitor 1 1 73 75 difficult

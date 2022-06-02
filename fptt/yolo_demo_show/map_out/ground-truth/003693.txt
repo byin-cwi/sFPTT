@@ -1,0 +1,5 @@
+dog 115 162 268 320
+dog 223 127 332 284
+dog 124 42 197 111 difficult
+dog 20 109 204 228
+dog 134 104 219 164 difficult

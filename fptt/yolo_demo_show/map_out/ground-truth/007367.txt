@@ -1,0 +1,3 @@
+bus 133 184 274 234
+aeroplane 284 183 412 219 difficult
+aeroplane 72 167 229 195 difficult

@@ -1,0 +1,2 @@
+dog 1 291 37 338 difficult
+person 43 239 91 334

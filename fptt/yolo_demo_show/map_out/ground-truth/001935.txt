@@ -1,0 +1,3 @@
+train 42 114 500 217
+car 370 181 443 214
+person 351 175 366 211 difficult

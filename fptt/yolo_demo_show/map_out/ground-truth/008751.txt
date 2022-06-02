@@ -1,0 +1,15 @@
+chair 271 333 397 375 difficult
+chair 105 340 235 374 difficult
+chair 1 330 103 375 difficult
+diningtable 1 238 379 340
+tvmonitor 315 135 365 176 difficult
+person 271 265 360 347 difficult
+person 144 271 267 353
+person 219 199 270 248
+person 81 147 109 198
+person 52 146 82 232
+person 22 149 52 184
+person 233 141 261 188
+person 368 78 458 312
+person 364 114 415 195
+chair 261 165 298 213 difficult

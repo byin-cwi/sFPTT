@@ -1,0 +1,3 @@
+dog 72 163 397 375
+person 184 177 304 375
+sofa 4 23 500 375 difficult

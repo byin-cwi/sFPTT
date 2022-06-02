@@ -1,0 +1,8 @@
+tvmonitor 294 149 341 186 difficult
+sofa 118 189 351 291 difficult
+sofa 354 199 500 285 difficult
+chair 412 162 457 197 difficult
+chair 135 175 166 193 difficult
+pottedplant 1 167 40 241
+pottedplant 170 109 197 193 difficult
+pottedplant 196 169 222 195

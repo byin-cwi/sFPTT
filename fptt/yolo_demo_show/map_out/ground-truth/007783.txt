@@ -1,0 +1,5 @@
+motorbike 1 2 489 375
+person 466 92 500 226 difficult
+bottle 470 206 496 279
+person 295 1 353 103
+person 211 1 297 115 difficult

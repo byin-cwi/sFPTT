@@ -1,0 +1,7 @@
+tvmonitor 122 354 222 468
+tvmonitor 173 248 224 302 difficult
+car 344 134 375 194
+car 317 125 365 172
+car 308 130 317 160 difficult
+car 294 134 310 157 difficult
+car 281 131 298 147 difficult

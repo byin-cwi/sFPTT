@@ -1,0 +1,5 @@
+sofa 1 245 158 375 difficult
+tvmonitor 472 189 500 267
+chair 399 250 460 304 difficult
+chair 412 305 500 375 difficult
+diningtable 415 272 500 375 difficult

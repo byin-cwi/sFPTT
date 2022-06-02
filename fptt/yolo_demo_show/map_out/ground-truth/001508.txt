@@ -1,0 +1,8 @@
+cow 114 242 375 500
+bird 359 204 373 223 difficult
+bird 234 230 256 263
+bird 293 198 309 215
+bird 188 217 216 236 difficult
+bird 113 203 137 229 difficult
+bird 32 441 51 458 difficult
+bird 23 450 39 471 difficult

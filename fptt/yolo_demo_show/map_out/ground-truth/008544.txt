@@ -1,0 +1,2 @@
+dog 4 20 500 309
+cat 189 1 332 71 difficult

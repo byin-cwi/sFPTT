@@ -1,0 +1,4 @@
+cow 59 91 340 335
+car 349 105 433 149
+car 421 97 448 123 difficult
+car 328 103 369 137 difficult

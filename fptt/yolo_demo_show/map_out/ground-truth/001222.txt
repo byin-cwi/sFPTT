@@ -1,0 +1,6 @@
+person 103 158 122 181 difficult
+person 9 189 46 252
+chair 36 192 74 260 difficult
+chair 1 299 43 375
+car 112 183 471 328
+car 107 146 243 196

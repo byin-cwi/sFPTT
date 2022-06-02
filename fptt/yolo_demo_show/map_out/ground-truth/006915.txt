@@ -1,0 +1,7 @@
+dog 87 50 371 313
+dog 279 181 463 375
+person 189 14 202 39 difficult
+person 172 16 183 36 difficult
+bicycle 181 31 202 46 difficult
+bicycle 164 26 193 45 difficult
+person 366 1 489 206

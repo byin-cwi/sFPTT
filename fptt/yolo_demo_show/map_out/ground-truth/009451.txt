@@ -1,0 +1,15 @@
+sheep 190 161 409 375
+sheep 138 103 344 325
+sheep 123 48 189 97 difficult
+sheep 408 69 468 94
+sheep 3 65 41 135 difficult
+sheep 1 84 26 170
+sheep 468 52 496 69 difficult
+sheep 429 53 444 70 difficult
+sheep 470 89 499 107 difficult
+sheep 361 52 380 67 difficult
+sheep 307 47 337 69 difficult
+sheep 275 52 299 67 difficult
+sheep 3 46 36 68 difficult
+sheep 107 51 121 67 difficult
+sheep 118 59 136 83 difficult

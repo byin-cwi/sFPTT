@@ -1,0 +1,9 @@
+bus 8 123 242 244
+car 242 169 259 208 difficult
+bicycle 420 229 486 281
+bicycle 315 226 394 281
+bicycle 228 209 314 279
+bicycle 72 201 177 280
+bicycle 47 203 137 273
+bicycle 1 219 31 263 difficult
+person 379 178 392 207 difficult

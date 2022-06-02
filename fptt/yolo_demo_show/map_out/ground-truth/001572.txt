@@ -1,0 +1,8 @@
+car 6 111 429 350
+car 2 121 157 223
+car 148 119 210 166 difficult
+person 215 96 241 170
+person 243 100 264 115 difficult
+car 421 79 460 102
+car 440 146 489 162 difficult
+tvmonitor 422 132 500 170

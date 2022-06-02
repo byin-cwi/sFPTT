@@ -1,0 +1,3 @@
+sofa 46 23 478 242
+person 4 69 432 197
+cat 230 3 338 62 difficult

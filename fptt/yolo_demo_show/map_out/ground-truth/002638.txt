@@ -1,0 +1,4 @@
+tvmonitor 86 74 136 98 difficult
+tvmonitor 217 78 297 146
+chair 212 174 346 375
+tvmonitor 129 79 221 167

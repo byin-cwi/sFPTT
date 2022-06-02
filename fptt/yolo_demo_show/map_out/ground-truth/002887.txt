@@ -1,0 +1,3 @@
+sofa 135 244 336 333
+sofa 388 297 500 375 difficult
+pottedplant 340 255 377 274

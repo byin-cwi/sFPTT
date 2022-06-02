@@ -1,0 +1,4 @@
+person 133 15 333 412
+person 42 29 205 280
+chair 57 1 206 128
+person 293 1 333 133 difficult

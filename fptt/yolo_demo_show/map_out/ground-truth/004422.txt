@@ -1,0 +1,10 @@
+bottle 389 219 408 291 difficult
+bottle 381 205 390 241 difficult
+bottle 371 216 386 286 difficult
+bottle 352 223 371 294 difficult
+bottle 343 211 355 289 difficult
+bottle 330 215 344 288 difficult
+pottedplant 361 96 468 189 difficult
+pottedplant 323 143 415 220
+pottedplant 281 142 328 223 difficult
+pottedplant 288 109 344 192 difficult

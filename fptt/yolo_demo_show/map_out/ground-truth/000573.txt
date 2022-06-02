@@ -1,0 +1,2 @@
+chair 343 133 500 243 difficult
+chair 5 69 137 220

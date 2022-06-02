@@ -1,0 +1,5 @@
+bicycle 94 323 246 479
+bicycle 162 299 293 477
+car 78 209 102 231
+car 135 210 154 233 difficult
+car 108 213 130 228 difficult

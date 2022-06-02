@@ -1,0 +1,4 @@
+diningtable 4 243 375 500 difficult
+sofa 224 165 375 246 difficult
+chair 91 160 301 243 difficult
+bottle 117 20 250 454

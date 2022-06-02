@@ -1,0 +1,2 @@
+person 179 99 204 124 difficult
+car 14 91 358 174

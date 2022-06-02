@@ -1,0 +1,6 @@
+person 183 152 308 455
+person 3 28 202 464
+person 156 111 268 261
+chair 263 208 333 440
+chair 5 311 111 410 difficult
+diningtable 1 258 205 291 difficult

@@ -1,0 +1,6 @@
+car 256 231 500 333
+car 1 255 256 333
+car 238 252 302 300
+car 160 251 231 276 difficult
+car 1 267 62 293 difficult
+car 3 248 53 273 difficult

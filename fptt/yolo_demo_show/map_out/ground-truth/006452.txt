@@ -1,0 +1,4 @@
+tvmonitor 107 221 176 288
+sofa 264 275 333 413 difficult
+person 160 119 255 461
+bottle 28 287 61 381

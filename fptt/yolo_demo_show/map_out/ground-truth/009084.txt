@@ -1,0 +1,10 @@
+motorbike 43 77 481 375
+dog 127 68 237 240
+dog 1 217 98 375
+person 434 35 461 135 difficult
+person 435 17 472 68 difficult
+person 380 27 415 91 difficult
+person 366 47 385 96 difficult
+chair 451 83 500 191
+chair 369 83 437 180
+chair 313 76 375 137

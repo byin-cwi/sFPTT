@@ -1,0 +1,12 @@
+bottle 119 240 137 287
+person 99 99 211 262
+person 190 70 288 297
+person 263 126 411 375
+person 328 65 424 244
+person 365 170 500 375
+sofa 259 75 344 140 difficult
+pottedplant 303 1 352 50
+chair 1 330 63 375 difficult
+person 1 208 14 226 difficult
+diningtable 1 233 258 375
+chair 95 144 150 186 difficult

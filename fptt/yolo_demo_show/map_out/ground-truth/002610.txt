@@ -1,0 +1,4 @@
+chair 225 313 360 363 difficult
+chair 23 316 130 375 difficult
+chair 79 334 239 375 difficult
+car 1 241 213 344

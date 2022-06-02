@@ -1,0 +1,9 @@
+motorbike 77 120 354 404
+car 3 185 207 295
+car 274 155 375 327
+car 196 162 311 259 difficult
+car 104 162 217 203
+car 1 167 88 200 difficult
+car 1 167 39 191 difficult
+person 18 164 36 192 difficult
+car 280 146 333 164 difficult

@@ -1,0 +1,16 @@
+tvmonitor 68 130 139 192
+chair 1 199 57 354 difficult
+sofa 188 167 397 287
+person 209 155 382 235
+chair 426 124 465 159 difficult
+chair 405 121 472 195
+chair 420 124 479 214
+chair 311 117 350 156 difficult
+chair 295 122 347 160 difficult
+chair 281 125 346 167 difficult
+chair 257 115 290 161 difficult
+chair 244 121 282 170
+chair 185 134 227 189
+chair 369 114 407 135 difficult
+chair 348 135 397 202 difficult
+diningtable 330 129 424 204

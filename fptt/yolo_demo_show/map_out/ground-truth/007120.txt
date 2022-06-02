@@ -1,0 +1,8 @@
+person 69 199 197 333
+person 249 203 315 334
+person 288 233 363 335 difficult
+person 345 195 406 335 difficult
+person 400 193 433 308 difficult
+person 420 172 482 323 difficult
+person 479 193 497 224 difficult
+person 439 218 499 332

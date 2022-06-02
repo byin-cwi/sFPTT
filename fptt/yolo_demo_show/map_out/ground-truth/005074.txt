@@ -1,0 +1,8 @@
+boat 36 152 387 297
+car 343 194 426 240
+car 396 201 469 233
+car 323 194 351 222 difficult
+car 87 191 144 209 difficult
+car 22 189 83 222
+car 62 200 118 226 difficult
+bird 419 260 472 297

@@ -1,0 +1,4 @@
+bus 97 65 356 299
+person 266 182 290 221 difficult
+person 227 188 243 225 difficult
+person 59 214 72 237 difficult

@@ -1,0 +1,3 @@
+dog 308 131 356 173
+dog 224 143 274 182 difficult
+dog 270 125 298 153 difficult

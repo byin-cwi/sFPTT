@@ -1,0 +1,13 @@
+car 58 26 433 303
+person 409 52 439 149
+person 369 60 394 114
+person 440 71 458 140 difficult
+person 446 57 468 130 difficult
+person 351 54 372 109 difficult
+person 91 68 103 112 difficult
+person 102 71 113 103 difficult
+person 116 64 125 100 difficult
+person 31 65 45 111
+person 48 67 65 110
+person 67 65 81 107
+person 79 70 91 106 difficult

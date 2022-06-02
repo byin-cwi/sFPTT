@@ -1,0 +1,2 @@
+person 79 39 391 256
+chair 89 22 412 256 difficult

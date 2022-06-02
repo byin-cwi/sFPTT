@@ -1,0 +1,9 @@
+tvmonitor 174 189 282 298
+tvmonitor 92 207 146 278
+tvmonitor 222 285 345 398
+tvmonitor 368 154 397 204 difficult
+tvmonitor 329 139 357 177 difficult
+tvmonitor 300 132 330 170
+tvmonitor 264 130 288 156
+tvmonitor 219 132 235 150 difficult
+tvmonitor 238 129 253 150 difficult

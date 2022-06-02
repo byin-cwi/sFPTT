@@ -1,0 +1,3 @@
+sofa 63 195 500 245 difficult
+tvmonitor 203 32 294 107
+cat 157 229 316 375

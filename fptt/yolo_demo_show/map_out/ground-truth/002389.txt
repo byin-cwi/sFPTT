@@ -1,0 +1,10 @@
+diningtable 29 185 436 374
+chair 82 188 231 375
+chair 206 167 298 300 difficult
+chair 331 177 455 374
+chair 248 201 377 374
+bottle 62 144 75 172 difficult
+bottle 96 140 112 166 difficult
+bottle 125 135 140 163 difficult
+bottle 143 145 155 158 difficult
+bottle 24 158 37 178 difficult

@@ -1,0 +1,5 @@
+bus 9 330 67 396
+person 200 385 250 471
+person 38 374 56 440
+person 17 376 29 404 difficult
+person 2 383 12 417 difficult

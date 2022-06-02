@@ -1,0 +1,929 @@
+python train_gesture_dvs_snn.py --dataset DVS-Gesture --parts 28 --batch_size 32 --nhid 512 --lr 3e-3 --when 20 50 --epochs 100 --optim Adamax --log-interval 8
+device: cuda:0
+/home/yin/.local/lib/python3.8/site-packages/torchaudio/backend/utils.py:53: UserWarning: "sox" backend is being deprecated. The default backend will be changed to "sox_io" backend in 0.8.0 and "sox" backend will be removed in 0.9.0. Please migrate to "sox_io" backend. Please refer to https://github.com/pytorch/audio/issues/903 for the detail.
+  warnings.warn(
+2022-02-27 00:03:03,916 - trainer - INFO - Args: Namespace(K=1, T=20, alpha=0.1, batch_size=32, beta=0.5, bptt=300, clip=1.0, cuda=True, dataroot='./data/', dataset='DVS-Gesture', debias=False, dropout=0.05, dropoute=0, dropouth=0.2, dropouti=0.2, dropoutl=0.29, emsize=256, epochs=100, eval_batch_size=10, lmbda=2.0, load='', log_interval=8, lr=0.003, max_seq_len_delta=40, model='LSTM', n_experts=15, nhid=512, nhidlast=620, nlayers=1, nonmono=5, optim='Adamax', parts=28, per_ex_stats=False, permute=False, resume='', rho=0.0, save='./models/', seed=1111, small_batch_size=-1, temporalwdrop=True, tied=False, wdecay=0.0, wdrop=0.1, when=[20, 50], wnorm=True)
+2022-02-27 00:03:03,916 - trainer - INFO - Exp_name = DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5
+2022-02-27 00:03:03,916 - trainer - INFO - Prefix = ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5
+npy format events data root ../IBM-dvs128/data/events_npy/train, ../IBM-dvs128/data/events_npy/test already exists
+frames data root ../IBM-dvs128/data/frames_num_100_split_by_number_normalization_None already exists.
+npy format events data root ../IBM-dvs128/data/events_npy/train, ../IBM-dvs128/data/events_npy/test already exists
+frames data root ../IBM-dvs128/data/frames_num_100_split_by_number_normalization_None already exists.
+SNN-lc  28
+SNN-conv 
+SNN-conv 
+SNN-conv 
+SNN-conv 
+SNN-conv 
+SNN-conv 
+torch.Size([64, 64, 64]) torch.Size([128, 32, 32]) torch.Size([128, 16, 16]) torch.Size([256, 8, 8]) torch.Size([256, 4, 4]) torch.Size([512, 2, 2])
+2022-02-27 00:03:06,294 - trainer - INFO - Optimizer = Adamax (
+Parameter Group 0
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.003
+    weight_decay: 0.0
+)
+2022-02-27 00:03:06,294 - trainer - INFO - Model total parameters: 14116051
+2022-02-27 00:05:09,488 - trainer - INFO - Train Epoch: 1 [256/1116 (24%)]	lr: 0.003000	Loss: 89.968380	Oracle:                 16.428888	Clf: 65.804100	Reg: 7.735393	Fr: 0.162019	Steps: 900
+2022-02-27 00:06:58,959 - trainer - INFO - Train Epoch: 1 [512/1116 (47%)]	lr: 0.003000	Loss: 60.773484	Oracle:                 15.614916	Clf: 43.953583	Reg: 1.204984	Fr: 0.156221	Steps: 1700
+2022-02-27 00:08:48,276 - trainer - INFO - Train Epoch: 1 [768/1116 (71%)]	lr: 0.003000	Loss: 57.067746	Oracle:                 16.142378	Clf: 39.639488	Reg: 1.285881	Fr: 0.166463	Steps: 2500
+2022-02-27 00:10:35,773 - trainer - INFO - Train Epoch: 1 [1024/1116 (94%)]	lr: 0.003000	Loss: 52.472566	Oracle:                 16.637823	Clf: 34.481142	Reg: 1.353602	Fr: 0.165783	Steps: 3300
+2022-02-27 00:11:19,766 - trainer - INFO - 
+Test set: Average loss: 1.2114, Accuracy: 173/288 (60.069%)
+
+2022-02-27 00:11:19,767 - trainer - INFO - time taken = 493.467866897583
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 00:13:22,022 - trainer - INFO - Train Epoch: 2 [256/1116 (24%)]	lr: 0.003000	Loss: 47.272206	Oracle:                 18.893295	Clf: 27.470297	Reg: 0.908614	Fr: 0.164367	Steps: 4300
+2022-02-27 00:15:14,645 - trainer - INFO - Train Epoch: 2 [512/1116 (47%)]	lr: 0.003000	Loss: 42.640029	Oracle:                 17.087896	Clf: 24.690014	Reg: 0.862119	Fr: 0.167522	Steps: 5100
+2022-02-27 00:17:03,262 - trainer - INFO - Train Epoch: 2 [768/1116 (71%)]	lr: 0.003000	Loss: 37.925069	Oracle:                 17.099555	Clf: 19.953364	Reg: 0.872150	Fr: 0.158460	Steps: 5900
+2022-02-27 00:18:53,761 - trainer - INFO - Train Epoch: 2 [1024/1116 (94%)]	lr: 0.003000	Loss: 37.199052	Oracle:                 17.177979	Clf: 19.250935	Reg: 0.770138	Fr: 0.166681	Steps: 6700
+2022-02-27 00:19:35,909 - trainer - INFO - 
+Test set: Average loss: 0.5572, Accuracy: 238/288 (82.639%)
+
+2022-02-27 00:19:35,909 - trainer - INFO - time taken = 495.8876984119415
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 00:21:37,867 - trainer - INFO - Train Epoch: 3 [256/1116 (24%)]	lr: 0.003000	Loss: 39.507951	Oracle:                 19.760715	Clf: 18.888406	Reg: 0.858830	Fr: 0.162369	Steps: 7700
+2022-02-27 00:23:28,016 - trainer - INFO - Train Epoch: 3 [512/1116 (47%)]	lr: 0.003000	Loss: 32.642478	Oracle:                 17.583074	Clf: 14.484971	Reg: 0.574434	Fr: 0.148195	Steps: 8500
+2022-02-27 00:25:20,706 - trainer - INFO - Train Epoch: 3 [768/1116 (71%)]	lr: 0.003000	Loss: 32.735837	Oracle:                 17.438174	Clf: 14.685553	Reg: 0.612111	Fr: 0.154054	Steps: 9300
+2022-02-27 00:27:09,979 - trainer - INFO - Train Epoch: 3 [1024/1116 (94%)]	lr: 0.003000	Loss: 34.602890	Oracle:                 17.460542	Clf: 16.345504	Reg: 0.796845	Fr: 0.157479	Steps: 10100
+2022-02-27 00:27:56,457 - trainer - INFO - 
+Test set: Average loss: 0.8159, Accuracy: 214/288 (74.306%)
+
+2022-02-27 00:27:56,459 - trainer - INFO - time taken = 500.1310544013977
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 00:29:59,471 - trainer - INFO - Train Epoch: 4 [256/1116 (24%)]	lr: 0.003000	Loss: 35.457204	Oracle:                 19.885630	Clf: 14.922578	Reg: 0.648996	Fr: 0.143593	Steps: 11100
+2022-02-27 00:31:50,009 - trainer - INFO - Train Epoch: 4 [512/1116 (47%)]	lr: 0.003000	Loss: 33.691571	Oracle:                 17.476911	Clf: 15.557984	Reg: 0.656676	Fr: 0.157020	Steps: 11900
+2022-02-27 00:33:38,985 - trainer - INFO - Train Epoch: 4 [768/1116 (71%)]	lr: 0.003000	Loss: 30.036222	Oracle:                 17.749242	Clf: 11.802423	Reg: 0.484556	Fr: 0.142013	Steps: 12700
+2022-02-27 00:35:27,139 - trainer - INFO - Train Epoch: 4 [1024/1116 (94%)]	lr: 0.003000	Loss: 28.413630	Oracle:                 17.840210	Clf: 10.108600	Reg: 0.464820	Fr: 0.155356	Steps: 13500
+2022-02-27 00:36:10,797 - trainer - INFO - 
+Test set: Average loss: 0.4261, Accuracy: 257/288 (89.236%)
+
+2022-02-27 00:36:10,797 - trainer - INFO - time taken = 494.0807192325592
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 00:38:15,665 - trainer - INFO - Train Epoch: 5 [256/1116 (24%)]	lr: 0.003000	Loss: 32.686701	Oracle:                 20.066480	Clf: 12.118526	Reg: 0.501695	Fr: 0.156762	Steps: 14500
+2022-02-27 00:40:07,064 - trainer - INFO - Train Epoch: 5 [512/1116 (47%)]	lr: 0.003000	Loss: 29.505713	Oracle:                 17.626020	Clf: 11.410047	Reg: 0.469646	Fr: 0.149152	Steps: 15300
+2022-02-27 00:42:00,247 - trainer - INFO - Train Epoch: 5 [768/1116 (71%)]	lr: 0.003000	Loss: 29.069624	Oracle:                 17.646004	Clf: 10.938536	Reg: 0.485083	Fr: 0.150837	Steps: 16100
+2022-02-27 00:43:29,567 - trainer - INFO - Train Epoch: 5 [1024/1116 (94%)]	lr: 0.003000	Loss: 28.359103	Oracle:                 17.717481	Clf: 10.142063	Reg: 0.499560	Fr: 0.146955	Steps: 16900
+2022-02-27 00:44:00,621 - trainer - INFO - 
+Test set: Average loss: 0.4241, Accuracy: 252/288 (87.500%)
+
+2022-02-27 00:44:00,621 - trainer - INFO - time taken = 469.4170880317688
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 00:45:26,433 - trainer - INFO - Train Epoch: 6 [256/1116 (24%)]	lr: 0.003000	Loss: 29.245672	Oracle:                 20.107038	Clf: 8.839650	Reg: 0.298984	Fr: 0.140987	Steps: 17900
+2022-02-27 00:46:43,641 - trainer - INFO - Train Epoch: 6 [512/1116 (47%)]	lr: 0.003000	Loss: 28.335784	Oracle:                 17.792390	Clf: 10.060311	Reg: 0.483083	Fr: 0.145225	Steps: 18700
+2022-02-27 00:48:00,248 - trainer - INFO - Train Epoch: 6 [768/1116 (71%)]	lr: 0.003000	Loss: 27.966926	Oracle:                 17.672608	Clf: 9.808004	Reg: 0.486314	Fr: 0.146188	Steps: 19500
+2022-02-27 00:49:16,956 - trainer - INFO - Train Epoch: 6 [1024/1116 (94%)]	lr: 0.003000	Loss: 27.771274	Oracle:                 17.712601	Clf: 9.605677	Reg: 0.452996	Fr: 0.143152	Steps: 20300
+2022-02-27 00:49:49,935 - trainer - INFO - 
+Test set: Average loss: 0.4103, Accuracy: 258/288 (89.583%)
+
+2022-02-27 00:49:49,935 - trainer - INFO - time taken = 349.0666913986206
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 00:51:16,387 - trainer - INFO - Train Epoch: 7 [256/1116 (24%)]	lr: 0.003000	Loss: 30.337870	Oracle:                 20.012507	Clf: 9.963912	Reg: 0.361451	Fr: 0.142017	Steps: 21300
+2022-02-27 00:52:32,551 - trainer - INFO - Train Epoch: 7 [512/1116 (47%)]	lr: 0.003000	Loss: 25.587921	Oracle:                 17.793096	Clf: 7.480221	Reg: 0.314605	Fr: 0.145685	Steps: 22100
+2022-02-27 00:53:49,235 - trainer - INFO - Train Epoch: 7 [768/1116 (71%)]	lr: 0.003000	Loss: 26.848652	Oracle:                 17.771055	Clf: 8.686660	Reg: 0.390937	Fr: 0.135006	Steps: 22900
+2022-02-27 00:55:05,746 - trainer - INFO - Train Epoch: 7 [1024/1116 (94%)]	lr: 0.003000	Loss: 26.987590	Oracle:                 17.732133	Clf: 8.811772	Reg: 0.443686	Fr: 0.139276	Steps: 23700
+2022-02-27 00:55:37,344 - trainer - INFO - 
+Test set: Average loss: 0.8591, Accuracy: 210/288 (72.917%)
+
+2022-02-27 00:55:37,344 - trainer - INFO - time taken = 346.96310448646545
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 00:57:02,825 - trainer - INFO - Train Epoch: 8 [256/1116 (24%)]	lr: 0.003000	Loss: 29.133011	Oracle:                 20.105961	Clf: 8.675745	Reg: 0.351305	Fr: 0.149502	Steps: 24700
+2022-02-27 00:58:19,242 - trainer - INFO - Train Epoch: 8 [512/1116 (47%)]	lr: 0.003000	Loss: 26.164275	Oracle:                 17.880595	Clf: 7.920688	Reg: 0.362992	Fr: 0.150311	Steps: 25500
+2022-02-27 00:59:35,520 - trainer - INFO - Train Epoch: 8 [768/1116 (71%)]	lr: 0.003000	Loss: 25.065816	Oracle:                 17.849558	Clf: 6.946452	Reg: 0.269807	Fr: 0.154820	Steps: 26300
+2022-02-27 01:00:52,183 - trainer - INFO - Train Epoch: 8 [1024/1116 (94%)]	lr: 0.003000	Loss: 26.886523	Oracle:                 17.627311	Clf: 8.861606	Reg: 0.397606	Fr: 0.147553	Steps: 27100
+2022-02-27 01:01:23,373 - trainer - INFO - 
+Test set: Average loss: 0.3642, Accuracy: 260/288 (90.278%)
+
+2022-02-27 01:01:23,373 - trainer - INFO - time taken = 345.76672291755676
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 01:02:48,872 - trainer - INFO - Train Epoch: 9 [256/1116 (24%)]	lr: 0.003000	Loss: 27.668691	Oracle:                 20.015272	Clf: 7.403085	Reg: 0.250333	Fr: 0.151954	Steps: 28100
+2022-02-27 01:04:04,683 - trainer - INFO - Train Epoch: 9 [512/1116 (47%)]	lr: 0.003000	Loss: 26.032724	Oracle:                 17.871420	Clf: 7.840427	Reg: 0.320876	Fr: 0.147633	Steps: 28900
+2022-02-27 01:05:20,727 - trainer - INFO - Train Epoch: 9 [768/1116 (71%)]	lr: 0.003000	Loss: 25.813181	Oracle:                 17.836192	Clf: 7.676857	Reg: 0.300131	Fr: 0.144990	Steps: 29700
+2022-02-27 01:06:37,153 - trainer - INFO - Train Epoch: 9 [1024/1116 (94%)]	lr: 0.003000	Loss: 26.247396	Oracle:                 17.668067	Clf: 8.181742	Reg: 0.397586	Fr: 0.150134	Steps: 30500
+2022-02-27 01:07:09,949 - trainer - INFO - 
+Test set: Average loss: 0.4351, Accuracy: 255/288 (88.542%)
+
+2022-02-27 01:07:09,958 - trainer - INFO - time taken = 346.18195700645447
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 01:08:35,776 - trainer - INFO - Train Epoch: 10 [256/1116 (24%)]	lr: 0.003000	Loss: 25.029210	Oracle:                 17.357013	Clf: 7.380458	Reg: 0.291739	Fr: 0.145251	Steps: 31500
+2022-02-27 01:09:53,180 - trainer - INFO - Train Epoch: 10 [512/1116 (47%)]	lr: 0.003000	Loss: 21.614849	Oracle:                 14.963971	Clf: 6.383273	Reg: 0.267605	Fr: 0.144766	Steps: 32300
+2022-02-27 01:11:10,026 - trainer - INFO - Train Epoch: 10 [768/1116 (71%)]	lr: 0.003000	Loss: 20.889590	Oracle:                 14.665411	Clf: 6.002454	Reg: 0.221725	Fr: 0.144134	Steps: 33100
+2022-02-27 01:12:26,413 - trainer - INFO - Train Epoch: 10 [1024/1116 (94%)]	lr: 0.003000	Loss: 21.424984	Oracle:                 14.654625	Clf: 6.459760	Reg: 0.310599	Fr: 0.152130	Steps: 33900
+2022-02-27 01:12:57,776 - trainer - INFO - 
+Test set: Average loss: 0.2779, Accuracy: 265/288 (92.014%)
+
+2022-02-27 01:12:57,777 - trainer - INFO - time taken = 347.57658338546753
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 01:14:22,534 - trainer - INFO - Train Epoch: 11 [256/1116 (24%)]	lr: 0.003000	Loss: 23.997704	Oracle:                 16.497227	Clf: 7.172555	Reg: 0.327922	Fr: 0.148093	Steps: 34900
+2022-02-27 01:15:39,198 - trainer - INFO - Train Epoch: 11 [512/1116 (47%)]	lr: 0.003000	Loss: 21.127848	Oracle:                 14.671354	Clf: 6.171919	Reg: 0.284575	Fr: 0.141518	Steps: 35700
+2022-02-27 01:16:57,248 - trainer - INFO - Train Epoch: 11 [768/1116 (71%)]	lr: 0.003000	Loss: 19.855940	Oracle:                 14.606636	Clf: 5.066807	Reg: 0.182497	Fr: 0.144686	Steps: 36500
+2022-02-27 01:18:14,197 - trainer - INFO - Train Epoch: 11 [1024/1116 (94%)]	lr: 0.003000	Loss: 19.819212	Oracle:                 14.539064	Clf: 5.100618	Reg: 0.179530	Fr: 0.139061	Steps: 37300
+2022-02-27 01:18:45,714 - trainer - INFO - 
+Test set: Average loss: 0.2927, Accuracy: 262/288 (90.972%)
+
+2022-02-27 01:18:45,714 - trainer - INFO - time taken = 347.53537106513977
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 01:20:11,390 - trainer - INFO - Train Epoch: 12 [256/1116 (24%)]	lr: 0.003000	Loss: 23.055926	Oracle:                 16.358491	Clf: 6.406237	Reg: 0.291198	Fr: 0.138231	Steps: 38300
+2022-02-27 01:21:27,336 - trainer - INFO - Train Epoch: 12 [512/1116 (47%)]	lr: 0.003000	Loss: 20.435164	Oracle:                 14.341393	Clf: 5.845123	Reg: 0.248647	Fr: 0.140007	Steps: 39100
+2022-02-27 01:22:43,245 - trainer - INFO - Train Epoch: 12 [768/1116 (71%)]	lr: 0.003000	Loss: 20.816540	Oracle:                 14.213615	Clf: 6.261358	Reg: 0.341568	Fr: 0.145008	Steps: 39900
+2022-02-27 01:23:59,453 - trainer - INFO - Train Epoch: 12 [1024/1116 (94%)]	lr: 0.003000	Loss: 19.547830	Oracle:                 14.183880	Clf: 5.187306	Reg: 0.176644	Fr: 0.145546	Steps: 40700
+2022-02-27 01:24:31,123 - trainer - INFO - 
+Test set: Average loss: 0.1857, Accuracy: 274/288 (95.139%)
+
+2022-02-27 01:24:31,132 - trainer - INFO - time taken = 345.1642019748688
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 01:25:57,695 - trainer - INFO - Train Epoch: 13 [256/1116 (24%)]	lr: 0.003000	Loss: 22.108283	Oracle:                 15.588699	Clf: 6.232196	Reg: 0.287388	Fr: 0.141666	Steps: 41700
+2022-02-27 01:27:13,892 - trainer - INFO - Train Epoch: 13 [512/1116 (47%)]	lr: 0.003000	Loss: 19.022972	Oracle:                 13.808241	Clf: 5.020881	Reg: 0.193850	Fr: 0.145082	Steps: 42500
+2022-02-27 01:28:30,082 - trainer - INFO - Train Epoch: 13 [768/1116 (71%)]	lr: 0.003000	Loss: 19.293009	Oracle:                 13.971453	Clf: 5.129371	Reg: 0.192185	Fr: 0.140054	Steps: 43300
+2022-02-27 01:29:46,860 - trainer - INFO - Train Epoch: 13 [1024/1116 (94%)]	lr: 0.003000	Loss: 19.387599	Oracle:                 13.689780	Clf: 5.460949	Reg: 0.236870	Fr: 0.141877	Steps: 44100
+2022-02-27 01:30:18,641 - trainer - INFO - 
+Test set: Average loss: 0.3288, Accuracy: 258/288 (89.583%)
+
+2022-02-27 01:30:18,642 - trainer - INFO - time taken = 347.11375188827515
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 01:31:44,638 - trainer - INFO - Train Epoch: 14 [256/1116 (24%)]	lr: 0.003000	Loss: 21.679038	Oracle:                 15.649647	Clf: 5.768976	Reg: 0.260414	Fr: 0.139960	Steps: 45100
+2022-02-27 01:33:02,117 - trainer - INFO - Train Epoch: 14 [512/1116 (47%)]	lr: 0.003000	Loss: 19.270673	Oracle:                 13.695059	Clf: 5.336755	Reg: 0.238859	Fr: 0.148926	Steps: 45900
+2022-02-27 01:34:19,008 - trainer - INFO - Train Epoch: 14 [768/1116 (71%)]	lr: 0.003000	Loss: 19.062992	Oracle:                 13.821831	Clf: 5.044459	Reg: 0.196702	Fr: 0.145387	Steps: 46700
+2022-02-27 01:35:36,020 - trainer - INFO - Train Epoch: 14 [1024/1116 (94%)]	lr: 0.003000	Loss: 19.848411	Oracle:                 13.798996	Clf: 5.799138	Reg: 0.250278	Fr: 0.143860	Steps: 47500
+2022-02-27 01:36:19,023 - trainer - INFO - 
+Test set: Average loss: 0.2810, Accuracy: 265/288 (92.014%)
+
+2022-02-27 01:36:19,032 - trainer - INFO - time taken = 360.1521999835968
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 01:38:20,802 - trainer - INFO - Train Epoch: 15 [256/1116 (24%)]	lr: 0.003000	Loss: 21.364477	Oracle:                 15.854637	Clf: 5.300074	Reg: 0.209766	Fr: 0.146688	Steps: 48500
+2022-02-27 01:40:11,622 - trainer - INFO - Train Epoch: 15 [512/1116 (47%)]	lr: 0.003000	Loss: 19.446819	Oracle:                 13.913848	Clf: 5.311699	Reg: 0.221272	Fr: 0.138183	Steps: 49300
+2022-02-27 01:42:00,839 - trainer - INFO - Train Epoch: 15 [768/1116 (71%)]	lr: 0.003000	Loss: 19.444813	Oracle:                 14.064926	Clf: 5.152191	Reg: 0.227696	Fr: 0.141623	Steps: 50100
+2022-02-27 01:43:49,570 - trainer - INFO - Train Epoch: 15 [1024/1116 (94%)]	lr: 0.003000	Loss: 19.032793	Oracle:                 13.977118	Clf: 4.868186	Reg: 0.187489	Fr: 0.131897	Steps: 50900
+2022-02-27 01:44:33,270 - trainer - INFO - 
+Test set: Average loss: 0.2181, Accuracy: 267/288 (92.708%)
+
+2022-02-27 01:44:33,270 - trainer - INFO - time taken = 493.99137568473816
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 01:46:38,252 - trainer - INFO - Train Epoch: 16 [256/1116 (24%)]	lr: 0.003000	Loss: 21.415832	Oracle:                 15.567073	Clf: 5.617871	Reg: 0.230888	Fr: 0.140979	Steps: 51900
+2022-02-27 01:48:30,432 - trainer - INFO - Train Epoch: 16 [512/1116 (47%)]	lr: 0.003000	Loss: 18.423331	Oracle:                 13.677159	Clf: 4.594357	Reg: 0.151815	Fr: 0.149111	Steps: 52700
+2022-02-27 01:50:24,179 - trainer - INFO - Train Epoch: 16 [768/1116 (71%)]	lr: 0.003000	Loss: 18.534628	Oracle:                 13.568817	Clf: 4.781300	Reg: 0.184511	Fr: 0.147835	Steps: 53500
+2022-02-27 01:52:16,108 - trainer - INFO - Train Epoch: 16 [1024/1116 (94%)]	lr: 0.003000	Loss: 18.603698	Oracle:                 13.658137	Clf: 4.749752	Reg: 0.195809	Fr: 0.138136	Steps: 54300
+2022-02-27 01:52:58,903 - trainer - INFO - 
+Test set: Average loss: 0.2588, Accuracy: 263/288 (91.319%)
+
+2022-02-27 01:52:58,903 - trainer - INFO - time taken = 505.3899199962616
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 01:55:00,883 - trainer - INFO - Train Epoch: 17 [256/1116 (24%)]	lr: 0.003000	Loss: 20.803040	Oracle:                 15.331378	Clf: 5.240727	Reg: 0.230934	Fr: 0.150209	Steps: 55300
+2022-02-27 01:56:52,002 - trainer - INFO - Train Epoch: 17 [512/1116 (47%)]	lr: 0.003000	Loss: 19.096730	Oracle:                 13.530397	Clf: 5.299992	Reg: 0.266341	Fr: 0.145562	Steps: 56100
+2022-02-27 01:58:47,016 - trainer - INFO - Train Epoch: 17 [768/1116 (71%)]	lr: 0.003000	Loss: 18.508311	Oracle:                 13.678206	Clf: 4.657366	Reg: 0.172739	Fr: 0.138663	Steps: 56900
+2022-02-27 02:00:37,559 - trainer - INFO - Train Epoch: 17 [1024/1116 (94%)]	lr: 0.003000	Loss: 18.524259	Oracle:                 13.574053	Clf: 4.755188	Reg: 0.195017	Fr: 0.140484	Steps: 57700
+2022-02-27 02:01:20,931 - trainer - INFO - 
+Test set: Average loss: 0.2799, Accuracy: 263/288 (91.319%)
+
+2022-02-27 02:01:20,933 - trainer - INFO - time taken = 501.7690587043762
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 02:03:28,458 - trainer - INFO - Train Epoch: 18 [256/1116 (24%)]	lr: 0.003000	Loss: 20.967465	Oracle:                 15.300154	Clf: 5.442231	Reg: 0.225079	Fr: 0.138165	Steps: 58700
+2022-02-27 02:05:19,286 - trainer - INFO - Train Epoch: 18 [512/1116 (47%)]	lr: 0.003000	Loss: 18.728878	Oracle:                 13.694602	Clf: 4.822003	Reg: 0.212273	Fr: 0.139342	Steps: 59500
+2022-02-27 02:07:10,188 - trainer - INFO - Train Epoch: 18 [768/1116 (71%)]	lr: 0.003000	Loss: 17.929024	Oracle:                 13.356532	Clf: 4.411571	Reg: 0.160920	Fr: 0.138878	Steps: 60300
+2022-02-27 02:09:01,299 - trainer - INFO - Train Epoch: 18 [1024/1116 (94%)]	lr: 0.003000	Loss: 18.723970	Oracle:                 13.713844	Clf: 4.808726	Reg: 0.201400	Fr: 0.141539	Steps: 61100
+2022-02-27 02:09:45,235 - trainer - INFO - 
+Test set: Average loss: 0.2746, Accuracy: 266/288 (92.361%)
+
+2022-02-27 02:09:45,235 - trainer - INFO - time taken = 504.0554678440094
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 02:11:51,034 - trainer - INFO - Train Epoch: 19 [256/1116 (24%)]	lr: 0.003000	Loss: 20.375530	Oracle:                 15.289126	Clf: 4.893623	Reg: 0.192780	Fr: 0.143612	Steps: 62100
+2022-02-27 02:13:43,393 - trainer - INFO - Train Epoch: 19 [512/1116 (47%)]	lr: 0.003000	Loss: 17.757528	Oracle:                 13.507823	Clf: 4.117869	Reg: 0.131837	Fr: 0.133924	Steps: 62900
+2022-02-27 02:15:34,646 - trainer - INFO - Train Epoch: 19 [768/1116 (71%)]	lr: 0.003000	Loss: 18.471781	Oracle:                 13.400614	Clf: 4.847448	Reg: 0.223718	Fr: 0.137975	Steps: 63700
+2022-02-27 02:17:27,338 - trainer - INFO - Train Epoch: 19 [1024/1116 (94%)]	lr: 0.003000	Loss: 18.022483	Oracle:                 13.442909	Clf: 4.406708	Reg: 0.172865	Fr: 0.139631	Steps: 64500
+2022-02-27 02:18:09,653 - trainer - INFO - 
+Test set: Average loss: 0.2758, Accuracy: 264/288 (91.667%)
+
+2022-02-27 02:18:09,653 - trainer - INFO - time taken = 504.16923570632935
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 02:20:15,391 - trainer - INFO - Train Epoch: 20 [256/1116 (24%)]	lr: 0.003000	Loss: 20.225638	Oracle:                 15.186603	Clf: 4.832243	Reg: 0.206791	Fr: 0.142097	Steps: 65500
+2022-02-27 02:22:07,305 - trainer - INFO - Train Epoch: 20 [512/1116 (47%)]	lr: 0.003000	Loss: 18.204810	Oracle:                 13.283276	Clf: 4.718974	Reg: 0.202560	Fr: 0.137730	Steps: 66300
+2022-02-27 02:24:01,163 - trainer - INFO - Train Epoch: 20 [768/1116 (71%)]	lr: 0.003000	Loss: 18.655438	Oracle:                 13.629740	Clf: 4.846504	Reg: 0.179193	Fr: 0.132326	Steps: 67100
+2022-02-27 02:25:54,711 - trainer - INFO - Train Epoch: 20 [1024/1116 (94%)]	lr: 0.003000	Loss: 17.861648	Oracle:                 13.352822	Clf: 4.345773	Reg: 0.163053	Fr: 0.136981	Steps: 67900
+2022-02-27 02:26:38,283 - trainer - INFO - 
+Test set: Average loss: 0.2100, Accuracy: 272/288 (94.444%)
+
+2022-02-27 02:26:38,283 - trainer - INFO - time taken = 508.3833818435669
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 02:28:44,891 - trainer - INFO - Train Epoch: 21 [256/1116 (24%)]	lr: 0.001500	Loss: 19.842942	Oracle:                 15.103638	Clf: 4.656375	Reg: 0.082929	Fr: 0.136538	Steps: 68900
+2022-02-27 02:30:37,856 - trainer - INFO - Train Epoch: 21 [512/1116 (47%)]	lr: 0.001500	Loss: 17.802104	Oracle:                 13.527728	Clf: 4.183933	Reg: 0.090443	Fr: 0.140967	Steps: 69700
+2022-02-27 02:32:30,170 - trainer - INFO - Train Epoch: 21 [768/1116 (71%)]	lr: 0.001500	Loss: 17.548287	Oracle:                 13.287250	Clf: 4.180796	Reg: 0.080242	Fr: 0.141052	Steps: 70500
+2022-02-27 02:34:21,578 - trainer - INFO - Train Epoch: 21 [1024/1116 (94%)]	lr: 0.001500	Loss: 17.658163	Oracle:                 13.379561	Clf: 4.193926	Reg: 0.084677	Fr: 0.137433	Steps: 71300
+2022-02-27 02:35:04,132 - trainer - INFO - 
+Test set: Average loss: 0.2352, Accuracy: 266/288 (92.361%)
+
+2022-02-27 02:35:04,133 - trainer - INFO - time taken = 505.59734773635864
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 02:37:08,973 - trainer - INFO - Train Epoch: 22 [256/1116 (24%)]	lr: 0.001500	Loss: 19.818982	Oracle:                 15.165823	Clf: 4.570152	Reg: 0.083008	Fr: 0.140281	Steps: 72300
+2022-02-27 02:38:58,949 - trainer - INFO - Train Epoch: 22 [512/1116 (47%)]	lr: 0.001500	Loss: 17.828383	Oracle:                 13.290878	Clf: 4.435090	Reg: 0.102415	Fr: 0.143574	Steps: 73100
+2022-02-27 02:40:49,909 - trainer - INFO - Train Epoch: 22 [768/1116 (71%)]	lr: 0.001500	Loss: 17.492838	Oracle:                 13.245484	Clf: 4.168391	Reg: 0.078963	Fr: 0.142495	Steps: 73900
+2022-02-27 02:42:38,949 - trainer - INFO - Train Epoch: 22 [1024/1116 (94%)]	lr: 0.001500	Loss: 17.546192	Oracle:                 13.414535	Clf: 4.059232	Reg: 0.072425	Fr: 0.141559	Steps: 74700
+2022-02-27 02:43:22,832 - trainer - INFO - 
+Test set: Average loss: 0.2909, Accuracy: 259/288 (89.931%)
+
+2022-02-27 02:43:22,841 - trainer - INFO - time taken = 498.45339274406433
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 02:45:30,393 - trainer - INFO - Train Epoch: 23 [256/1116 (24%)]	lr: 0.001500	Loss: 20.004676	Oracle:                 15.094579	Clf: 4.811851	Reg: 0.098246	Fr: 0.138819	Steps: 75700
+2022-02-27 02:47:20,853 - trainer - INFO - Train Epoch: 23 [512/1116 (47%)]	lr: 0.001500	Loss: 17.352597	Oracle:                 13.294703	Clf: 3.979482	Reg: 0.078412	Fr: 0.143164	Steps: 76500
+2022-02-27 02:49:11,254 - trainer - INFO - Train Epoch: 23 [768/1116 (71%)]	lr: 0.001500	Loss: 17.370180	Oracle:                 13.189373	Clf: 4.096796	Reg: 0.084011	Fr: 0.141259	Steps: 77300
+2022-02-27 02:51:01,381 - trainer - INFO - Train Epoch: 23 [1024/1116 (94%)]	lr: 0.001500	Loss: 17.293305	Oracle:                 13.158786	Clf: 4.050830	Reg: 0.083689	Fr: 0.134543	Steps: 78100
+2022-02-27 02:51:44,794 - trainer - INFO - 
+Test set: Average loss: 0.2351, Accuracy: 269/288 (93.403%)
+
+2022-02-27 02:51:44,795 - trainer - INFO - time taken = 501.7048382759094
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 02:53:49,117 - trainer - INFO - Train Epoch: 24 [256/1116 (24%)]	lr: 0.001500	Loss: 19.276452	Oracle:                 14.822633	Clf: 4.383726	Reg: 0.070093	Fr: 0.144520	Steps: 79100
+2022-02-27 02:55:40,873 - trainer - INFO - Train Epoch: 24 [512/1116 (47%)]	lr: 0.001500	Loss: 17.267190	Oracle:                 13.247986	Clf: 3.937207	Reg: 0.081997	Fr: 0.141280	Steps: 79900
+2022-02-27 02:57:32,962 - trainer - INFO - Train Epoch: 24 [768/1116 (71%)]	lr: 0.001500	Loss: 17.397716	Oracle:                 13.289591	Clf: 4.027452	Reg: 0.080673	Fr: 0.136438	Steps: 80700
+2022-02-27 02:59:25,820 - trainer - INFO - Train Epoch: 24 [1024/1116 (94%)]	lr: 0.001500	Loss: 17.598110	Oracle:                 13.314558	Clf: 4.186526	Reg: 0.097026	Fr: 0.140120	Steps: 81500
+2022-02-27 03:00:08,572 - trainer - INFO - 
+Test set: Average loss: 0.5080, Accuracy: 244/288 (84.722%)
+
+2022-02-27 03:00:08,572 - trainer - INFO - time taken = 503.5312411785126
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 03:02:09,897 - trainer - INFO - Train Epoch: 25 [256/1116 (24%)]	lr: 0.001500	Loss: 19.499450	Oracle:                 14.901301	Clf: 4.519246	Reg: 0.078903	Fr: 0.137054	Steps: 82500
+2022-02-27 03:04:01,223 - trainer - INFO - Train Epoch: 25 [512/1116 (47%)]	lr: 0.001500	Loss: 17.221095	Oracle:                 13.150694	Clf: 3.990822	Reg: 0.079579	Fr: 0.146122	Steps: 83300
+2022-02-27 03:05:52,721 - trainer - INFO - Train Epoch: 25 [768/1116 (71%)]	lr: 0.001500	Loss: 17.412162	Oracle:                 13.195467	Clf: 4.121591	Reg: 0.095105	Fr: 0.141815	Steps: 84100
+2022-02-27 03:07:43,802 - trainer - INFO - Train Epoch: 25 [1024/1116 (94%)]	lr: 0.001500	Loss: 17.455622	Oracle:                 13.191756	Clf: 4.182796	Reg: 0.081070	Fr: 0.139703	Steps: 84900
+2022-02-27 03:08:27,829 - trainer - INFO - 
+Test set: Average loss: 0.2292, Accuracy: 269/288 (93.403%)
+
+2022-02-27 03:08:27,838 - trainer - INFO - time taken = 498.97488284111023
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 03:10:32,789 - trainer - INFO - Train Epoch: 26 [256/1116 (24%)]	lr: 0.001500	Loss: 19.354714	Oracle:                 14.898153	Clf: 4.368669	Reg: 0.087892	Fr: 0.140867	Steps: 85900
+2022-02-27 03:12:25,335 - trainer - INFO - Train Epoch: 26 [512/1116 (47%)]	lr: 0.001500	Loss: 17.133691	Oracle:                 13.198610	Clf: 3.860652	Reg: 0.074429	Fr: 0.140400	Steps: 86700
+2022-02-27 03:14:16,359 - trainer - INFO - Train Epoch: 26 [768/1116 (71%)]	lr: 0.001500	Loss: 17.232432	Oracle:                 13.211166	Clf: 3.941601	Reg: 0.079666	Fr: 0.139998	Steps: 87500
+2022-02-27 03:16:07,454 - trainer - INFO - Train Epoch: 26 [1024/1116 (94%)]	lr: 0.001500	Loss: 17.213912	Oracle:                 13.210937	Clf: 3.934250	Reg: 0.068724	Fr: 0.141854	Steps: 88300
+2022-02-27 03:16:49,712 - trainer - INFO - 
+Test set: Average loss: 0.2809, Accuracy: 262/288 (90.972%)
+
+2022-02-27 03:16:49,721 - trainer - INFO - time taken = 501.63343572616577
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 03:18:55,609 - trainer - INFO - Train Epoch: 27 [256/1116 (24%)]	lr: 0.001500	Loss: 19.334315	Oracle:                 14.892292	Clf: 4.357441	Reg: 0.084582	Fr: 0.141054	Steps: 89300
+2022-02-27 03:20:47,576 - trainer - INFO - Train Epoch: 27 [512/1116 (47%)]	lr: 0.001500	Loss: 17.337675	Oracle:                 13.309336	Clf: 3.946292	Reg: 0.082046	Fr: 0.128396	Steps: 90100
+2022-02-27 03:22:40,237 - trainer - INFO - Train Epoch: 27 [768/1116 (71%)]	lr: 0.001500	Loss: 16.773384	Oracle:                 13.029957	Clf: 3.683643	Reg: 0.059785	Fr: 0.143447	Steps: 90900
+2022-02-27 03:24:31,650 - trainer - INFO - Train Epoch: 27 [1024/1116 (94%)]	lr: 0.001500	Loss: 17.081736	Oracle:                 13.143563	Clf: 3.861044	Reg: 0.077130	Fr: 0.147903	Steps: 91700
+2022-02-27 03:25:15,485 - trainer - INFO - 
+Test set: Average loss: 0.1732, Accuracy: 277/288 (96.181%)
+
+2022-02-27 03:25:15,485 - trainer - INFO - time taken = 505.5205512046814
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 03:27:21,093 - trainer - INFO - Train Epoch: 28 [256/1116 (24%)]	lr: 0.001500	Loss: 19.166013	Oracle:                 14.842267	Clf: 4.244571	Reg: 0.079175	Fr: 0.144038	Steps: 92700
+2022-02-27 03:29:13,172 - trainer - INFO - Train Epoch: 28 [512/1116 (47%)]	lr: 0.001500	Loss: 17.330242	Oracle:                 13.100523	Clf: 4.141816	Reg: 0.087902	Fr: 0.140841	Steps: 93500
+2022-02-27 03:31:04,563 - trainer - INFO - Train Epoch: 28 [768/1116 (71%)]	lr: 0.001500	Loss: 17.188758	Oracle:                 13.188950	Clf: 3.918366	Reg: 0.081442	Fr: 0.142407	Steps: 94300
+2022-02-27 03:32:57,390 - trainer - INFO - Train Epoch: 28 [1024/1116 (94%)]	lr: 0.001500	Loss: 17.102767	Oracle:                 13.257309	Clf: 3.779019	Reg: 0.066439	Fr: 0.146537	Steps: 95100
+2022-02-27 03:33:41,021 - trainer - INFO - 
+Test set: Average loss: 0.1888, Accuracy: 272/288 (94.444%)
+
+2022-02-27 03:33:41,021 - trainer - INFO - time taken = 505.1404855251312
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 03:35:46,356 - trainer - INFO - Train Epoch: 29 [256/1116 (24%)]	lr: 0.001500	Loss: 19.268160	Oracle:                 14.865948	Clf: 4.315396	Reg: 0.086815	Fr: 0.143176	Steps: 96100
+2022-02-27 03:37:38,290 - trainer - INFO - Train Epoch: 29 [512/1116 (47%)]	lr: 0.001500	Loss: 16.869928	Oracle:                 13.076596	Clf: 3.726619	Reg: 0.066713	Fr: 0.137188	Steps: 96900
+2022-02-27 03:39:29,987 - trainer - INFO - Train Epoch: 29 [768/1116 (71%)]	lr: 0.001500	Loss: 16.770965	Oracle:                 13.085946	Clf: 3.626785	Reg: 0.058234	Fr: 0.147312	Steps: 97700
+2022-02-27 03:41:24,199 - trainer - INFO - Train Epoch: 29 [1024/1116 (94%)]	lr: 0.001500	Loss: 17.298414	Oracle:                 13.261857	Clf: 3.953505	Reg: 0.083053	Fr: 0.149183	Steps: 98500
+2022-02-27 03:42:07,295 - trainer - INFO - 
+Test set: Average loss: 0.2479, Accuracy: 270/288 (93.750%)
+
+2022-02-27 03:42:07,295 - trainer - INFO - time taken = 505.9551594257355
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 03:44:13,844 - trainer - INFO - Train Epoch: 30 [256/1116 (24%)]	lr: 0.001500	Loss: 19.059990	Oracle:                 14.804160	Clf: 4.183290	Reg: 0.072540	Fr: 0.141685	Steps: 99500
+2022-02-27 03:46:07,744 - trainer - INFO - Train Epoch: 30 [512/1116 (47%)]	lr: 0.001500	Loss: 16.628465	Oracle:                 13.034472	Clf: 3.544701	Reg: 0.049292	Fr: 0.138920	Steps: 100300
+2022-02-27 03:47:59,777 - trainer - INFO - Train Epoch: 30 [768/1116 (71%)]	lr: 0.001500	Loss: 16.978416	Oracle:                 13.075815	Clf: 3.817576	Reg: 0.085025	Fr: 0.133470	Steps: 101100
+2022-02-27 03:49:51,212 - trainer - INFO - Train Epoch: 30 [1024/1116 (94%)]	lr: 0.001500	Loss: 16.907365	Oracle:                 12.983060	Clf: 3.828640	Reg: 0.095665	Fr: 0.147267	Steps: 101900
+2022-02-27 03:50:35,834 - trainer - INFO - 
+Test set: Average loss: 0.2502, Accuracy: 268/288 (93.056%)
+
+2022-02-27 03:50:35,834 - trainer - INFO - time taken = 508.28852128982544
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 03:52:39,882 - trainer - INFO - Train Epoch: 31 [256/1116 (24%)]	lr: 0.001500	Loss: 18.660411	Oracle:                 14.647233	Clf: 3.954238	Reg: 0.058940	Fr: 0.139346	Steps: 102900
+2022-02-27 03:54:32,483 - trainer - INFO - Train Epoch: 31 [512/1116 (47%)]	lr: 0.001500	Loss: 16.906500	Oracle:                 13.172412	Clf: 3.662715	Reg: 0.071372	Fr: 0.141444	Steps: 103700
+2022-02-27 03:56:26,460 - trainer - INFO - Train Epoch: 31 [768/1116 (71%)]	lr: 0.001500	Loss: 16.769986	Oracle:                 12.962325	Clf: 3.728091	Reg: 0.079569	Fr: 0.133835	Steps: 104500
+2022-02-27 03:58:18,850 - trainer - INFO - Train Epoch: 31 [1024/1116 (94%)]	lr: 0.001500	Loss: 16.844125	Oracle:                 13.022320	Clf: 3.746733	Reg: 0.075071	Fr: 0.141407	Steps: 105300
+2022-02-27 03:59:01,133 - trainer - INFO - 
+Test set: Average loss: 0.2376, Accuracy: 266/288 (92.361%)
+
+2022-02-27 03:59:01,134 - trainer - INFO - time taken = 505.03855562210083
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 04:01:08,123 - trainer - INFO - Train Epoch: 32 [256/1116 (24%)]	lr: 0.001500	Loss: 18.913512	Oracle:                 14.636374	Clf: 4.195866	Reg: 0.081272	Fr: 0.144153	Steps: 106300
+2022-02-27 04:02:58,157 - trainer - INFO - Train Epoch: 32 [512/1116 (47%)]	lr: 0.001500	Loss: 16.622095	Oracle:                 13.074892	Clf: 3.489446	Reg: 0.057757	Fr: 0.133808	Steps: 107100
+2022-02-27 04:04:48,784 - trainer - INFO - Train Epoch: 32 [768/1116 (71%)]	lr: 0.001500	Loss: 16.755568	Oracle:                 13.089720	Clf: 3.607360	Reg: 0.058489	Fr: 0.139388	Steps: 107900
+2022-02-27 04:06:39,011 - trainer - INFO - Train Epoch: 32 [1024/1116 (94%)]	lr: 0.001500	Loss: 16.874563	Oracle:                 12.983088	Clf: 3.802828	Reg: 0.088646	Fr: 0.139018	Steps: 108700
+2022-02-27 04:07:23,942 - trainer - INFO - 
+Test set: Average loss: 0.2353, Accuracy: 270/288 (93.750%)
+
+2022-02-27 04:07:23,944 - trainer - INFO - time taken = 502.56292271614075
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 04:09:30,413 - trainer - INFO - Train Epoch: 33 [256/1116 (24%)]	lr: 0.001500	Loss: 19.109107	Oracle:                 14.627925	Clf: 4.395466	Reg: 0.085715	Fr: 0.134525	Steps: 109700
+2022-02-27 04:11:20,455 - trainer - INFO - Train Epoch: 33 [512/1116 (47%)]	lr: 0.001500	Loss: 16.562180	Oracle:                 12.921519	Clf: 3.577750	Reg: 0.062912	Fr: 0.135575	Steps: 110500
+2022-02-27 04:13:13,274 - trainer - INFO - Train Epoch: 33 [768/1116 (71%)]	lr: 0.001500	Loss: 16.710712	Oracle:                 12.869847	Clf: 3.771602	Reg: 0.069264	Fr: 0.140662	Steps: 111300
+2022-02-27 04:15:05,725 - trainer - INFO - Train Epoch: 33 [1024/1116 (94%)]	lr: 0.001500	Loss: 16.425855	Oracle:                 12.829977	Clf: 3.531391	Reg: 0.064487	Fr: 0.140156	Steps: 112100
+2022-02-27 04:15:50,558 - trainer - INFO - 
+Test set: Average loss: 0.1834, Accuracy: 274/288 (95.139%)
+
+2022-02-27 04:15:50,567 - trainer - INFO - time taken = 506.3010609149933
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 04:17:55,258 - trainer - INFO - Train Epoch: 34 [256/1116 (24%)]	lr: 0.001500	Loss: 18.514149	Oracle:                 14.374791	Clf: 4.052730	Reg: 0.086629	Fr: 0.136134	Steps: 113100
+2022-02-27 04:19:47,228 - trainer - INFO - Train Epoch: 34 [512/1116 (47%)]	lr: 0.001500	Loss: 16.539563	Oracle:                 12.833774	Clf: 3.638927	Reg: 0.066862	Fr: 0.142769	Steps: 113900
+2022-02-27 04:21:40,720 - trainer - INFO - Train Epoch: 34 [768/1116 (71%)]	lr: 0.001500	Loss: 16.396136	Oracle:                 12.942128	Clf: 3.401323	Reg: 0.052685	Fr: 0.142366	Steps: 114700
+2022-02-27 04:23:32,903 - trainer - INFO - Train Epoch: 34 [1024/1116 (94%)]	lr: 0.001500	Loss: 16.338127	Oracle:                 12.866501	Clf: 3.420814	Reg: 0.050811	Fr: 0.141148	Steps: 115500
+2022-02-27 04:24:15,516 - trainer - INFO - 
+Test set: Average loss: 0.1802, Accuracy: 274/288 (95.139%)
+
+2022-02-27 04:24:15,517 - trainer - INFO - time taken = 504.67790150642395
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 04:26:20,715 - trainer - INFO - Train Epoch: 35 [256/1116 (24%)]	lr: 0.001500	Loss: 18.346097	Oracle:                 14.398764	Clf: 3.888070	Reg: 0.059262	Fr: 0.138487	Steps: 116500
+2022-02-27 04:28:14,085 - trainer - INFO - Train Epoch: 35 [512/1116 (47%)]	lr: 0.001500	Loss: 16.377333	Oracle:                 12.779330	Clf: 3.531907	Reg: 0.066096	Fr: 0.141629	Steps: 117300
+2022-02-27 04:30:05,759 - trainer - INFO - Train Epoch: 35 [768/1116 (71%)]	lr: 0.001500	Loss: 16.383843	Oracle:                 12.857661	Clf: 3.461548	Reg: 0.064633	Fr: 0.139869	Steps: 118100
+2022-02-27 04:31:56,230 - trainer - INFO - Train Epoch: 35 [1024/1116 (94%)]	lr: 0.001500	Loss: 16.465309	Oracle:                 12.909373	Clf: 3.493934	Reg: 0.062002	Fr: 0.137116	Steps: 118900
+2022-02-27 04:32:40,289 - trainer - INFO - 
+Test set: Average loss: 0.2137, Accuracy: 268/288 (93.056%)
+
+2022-02-27 04:32:40,289 - trainer - INFO - time taken = 504.5278377532959
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 04:34:45,986 - trainer - INFO - Train Epoch: 36 [256/1116 (24%)]	lr: 0.001500	Loss: 18.557160	Oracle:                 14.509441	Clf: 3.979740	Reg: 0.067980	Fr: 0.130829	Steps: 119900
+2022-02-27 04:36:39,041 - trainer - INFO - Train Epoch: 36 [512/1116 (47%)]	lr: 0.001500	Loss: 16.355420	Oracle:                 12.937078	Clf: 3.367924	Reg: 0.050418	Fr: 0.139775	Steps: 120700
+2022-02-27 04:38:31,972 - trainer - INFO - Train Epoch: 36 [768/1116 (71%)]	lr: 0.001500	Loss: 16.289788	Oracle:                 12.721427	Clf: 3.500732	Reg: 0.067629	Fr: 0.139882	Steps: 121500
+2022-02-27 04:40:22,733 - trainer - INFO - Train Epoch: 36 [1024/1116 (94%)]	lr: 0.001500	Loss: 16.160487	Oracle:                 12.661542	Clf: 3.436471	Reg: 0.062474	Fr: 0.137795	Steps: 122300
+2022-02-27 04:41:05,417 - trainer - INFO - 
+Test set: Average loss: 0.3512, Accuracy: 253/288 (87.847%)
+
+2022-02-27 04:41:05,418 - trainer - INFO - time taken = 504.8691668510437
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 04:43:13,041 - trainer - INFO - Train Epoch: 37 [256/1116 (24%)]	lr: 0.001500	Loss: 18.172050	Oracle:                 14.310364	Clf: 3.806117	Reg: 0.055569	Fr: 0.135148	Steps: 123300
+2022-02-27 04:45:03,574 - trainer - INFO - Train Epoch: 37 [512/1116 (47%)]	lr: 0.001500	Loss: 16.120553	Oracle:                 12.600764	Clf: 3.453324	Reg: 0.066464	Fr: 0.138518	Steps: 124100
+2022-02-27 04:46:55,303 - trainer - INFO - Train Epoch: 37 [768/1116 (71%)]	lr: 0.001500	Loss: 16.243258	Oracle:                 12.789041	Clf: 3.398544	Reg: 0.055673	Fr: 0.131014	Steps: 124900
+2022-02-27 04:48:47,723 - trainer - INFO - Train Epoch: 37 [1024/1116 (94%)]	lr: 0.001500	Loss: 16.370773	Oracle:                 12.876276	Clf: 3.435336	Reg: 0.059161	Fr: 0.141974	Steps: 125700
+2022-02-27 04:49:30,492 - trainer - INFO - 
+Test set: Average loss: 0.1714, Accuracy: 272/288 (94.444%)
+
+2022-02-27 04:49:30,492 - trainer - INFO - time taken = 504.82037472724915
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 04:51:37,317 - trainer - INFO - Train Epoch: 38 [256/1116 (24%)]	lr: 0.001500	Loss: 18.142807	Oracle:                 14.297362	Clf: 3.775529	Reg: 0.069916	Fr: 0.130240	Steps: 126700
+2022-02-27 04:53:31,172 - trainer - INFO - Train Epoch: 38 [512/1116 (47%)]	lr: 0.001500	Loss: 16.294872	Oracle:                 12.824475	Clf: 3.407049	Reg: 0.063349	Fr: 0.142332	Steps: 127500
+2022-02-27 04:55:26,718 - trainer - INFO - Train Epoch: 38 [768/1116 (71%)]	lr: 0.001500	Loss: 16.055619	Oracle:                 12.709979	Clf: 3.291361	Reg: 0.054278	Fr: 0.140020	Steps: 128300
+2022-02-27 04:57:15,521 - trainer - INFO - Train Epoch: 38 [1024/1116 (94%)]	lr: 0.001500	Loss: 16.245494	Oracle:                 12.698817	Clf: 3.470525	Reg: 0.076152	Fr: 0.137783	Steps: 129100
+2022-02-27 04:57:58,749 - trainer - INFO - 
+Test set: Average loss: 0.2398, Accuracy: 265/288 (92.014%)
+
+2022-02-27 04:57:58,758 - trainer - INFO - time taken = 508.00443959236145
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 05:00:04,389 - trainer - INFO - Train Epoch: 39 [256/1116 (24%)]	lr: 0.001500	Loss: 18.039627	Oracle:                 14.266547	Clf: 3.718902	Reg: 0.054178	Fr: 0.145783	Steps: 130100
+2022-02-27 05:01:54,993 - trainer - INFO - Train Epoch: 39 [512/1116 (47%)]	lr: 0.001500	Loss: 16.024206	Oracle:                 12.522977	Clf: 3.432235	Reg: 0.068993	Fr: 0.138639	Steps: 130900
+2022-02-27 05:03:48,240 - trainer - INFO - Train Epoch: 39 [768/1116 (71%)]	lr: 0.001500	Loss: 16.187311	Oracle:                 12.717206	Clf: 3.417210	Reg: 0.052895	Fr: 0.140337	Steps: 131700
+2022-02-27 05:05:39,268 - trainer - INFO - Train Epoch: 39 [1024/1116 (94%)]	lr: 0.001500	Loss: 16.036585	Oracle:                 12.676500	Clf: 3.308831	Reg: 0.051255	Fr: 0.137465	Steps: 132500
+2022-02-27 05:06:21,638 - trainer - INFO - 
+Test set: Average loss: 0.1696, Accuracy: 273/288 (94.792%)
+
+2022-02-27 05:06:21,647 - trainer - INFO - time taken = 502.6424198150635
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 05:08:29,141 - trainer - INFO - Train Epoch: 40 [256/1116 (24%)]	lr: 0.001500	Loss: 17.980485	Oracle:                 14.282873	Clf: 3.646638	Reg: 0.050974	Fr: 0.142593	Steps: 133500
+2022-02-27 05:10:20,525 - trainer - INFO - Train Epoch: 40 [512/1116 (47%)]	lr: 0.001500	Loss: 16.179428	Oracle:                 12.763334	Clf: 3.357776	Reg: 0.058318	Fr: 0.136267	Steps: 134300
+2022-02-27 05:12:11,163 - trainer - INFO - Train Epoch: 40 [768/1116 (71%)]	lr: 0.001500	Loss: 16.239474	Oracle:                 12.813123	Clf: 3.369423	Reg: 0.056928	Fr: 0.141350	Steps: 135100
+2022-02-27 05:14:02,979 - trainer - INFO - Train Epoch: 40 [1024/1116 (94%)]	lr: 0.001500	Loss: 16.159180	Oracle:                 12.819633	Clf: 3.285170	Reg: 0.054377	Fr: 0.138470	Steps: 135900
+2022-02-27 05:14:47,020 - trainer - INFO - 
+Test set: Average loss: 0.2006, Accuracy: 269/288 (93.403%)
+
+2022-02-27 05:14:47,029 - trainer - INFO - time taken = 505.13442373275757
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 05:16:53,872 - trainer - INFO - Train Epoch: 41 [256/1116 (24%)]	lr: 0.001500	Loss: 18.050400	Oracle:                 14.321022	Clf: 3.674549	Reg: 0.054829	Fr: 0.134159	Steps: 136900
+2022-02-27 05:18:46,656 - trainer - INFO - Train Epoch: 41 [512/1116 (47%)]	lr: 0.001500	Loss: 16.217472	Oracle:                 12.833616	Clf: 3.322419	Reg: 0.061436	Fr: 0.140128	Steps: 137700
+2022-02-27 05:20:37,044 - trainer - INFO - Train Epoch: 41 [768/1116 (71%)]	lr: 0.001500	Loss: 16.276465	Oracle:                 12.711730	Clf: 3.500754	Reg: 0.063980	Fr: 0.141949	Steps: 138500
+2022-02-27 05:22:28,689 - trainer - INFO - Train Epoch: 41 [1024/1116 (94%)]	lr: 0.001500	Loss: 16.042096	Oracle:                 12.693831	Clf: 3.297756	Reg: 0.050509	Fr: 0.133956	Steps: 139300
+2022-02-27 05:23:12,746 - trainer - INFO - 
+Test set: Average loss: 0.1960, Accuracy: 274/288 (95.139%)
+
+2022-02-27 05:23:12,755 - trainer - INFO - time taken = 505.47638726234436
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 05:25:18,922 - trainer - INFO - Train Epoch: 42 [256/1116 (24%)]	lr: 0.001500	Loss: 18.030247	Oracle:                 14.291526	Clf: 3.678979	Reg: 0.059741	Fr: 0.144890	Steps: 140300
+2022-02-27 05:27:10,239 - trainer - INFO - Train Epoch: 42 [512/1116 (47%)]	lr: 0.001500	Loss: 16.053739	Oracle:                 12.757652	Clf: 3.249754	Reg: 0.046333	Fr: 0.137116	Steps: 141100
+2022-02-27 05:29:02,773 - trainer - INFO - Train Epoch: 42 [768/1116 (71%)]	lr: 0.001500	Loss: 15.895762	Oracle:                 12.638609	Clf: 3.208536	Reg: 0.048616	Fr: 0.136443	Steps: 141900
+2022-02-27 05:30:54,039 - trainer - INFO - Train Epoch: 42 [1024/1116 (94%)]	lr: 0.001500	Loss: 15.973939	Oracle:                 12.595151	Clf: 3.317874	Reg: 0.060914	Fr: 0.142702	Steps: 142700
+2022-02-27 05:31:36,672 - trainer - INFO - 
+Test set: Average loss: 0.1887, Accuracy: 273/288 (94.792%)
+
+2022-02-27 05:31:36,672 - trainer - INFO - time taken = 503.6670718193054
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 05:33:43,695 - trainer - INFO - Train Epoch: 43 [256/1116 (24%)]	lr: 0.001500	Loss: 17.979558	Oracle:                 14.275571	Clf: 3.649058	Reg: 0.054929	Fr: 0.131630	Steps: 143700
+2022-02-27 05:35:34,345 - trainer - INFO - Train Epoch: 43 [512/1116 (47%)]	lr: 0.001500	Loss: 16.130466	Oracle:                 12.756438	Clf: 3.313262	Reg: 0.060766	Fr: 0.137705	Steps: 144500
+2022-02-27 05:37:26,380 - trainer - INFO - Train Epoch: 43 [768/1116 (71%)]	lr: 0.001500	Loss: 16.024886	Oracle:                 12.673585	Clf: 3.297550	Reg: 0.053752	Fr: 0.138721	Steps: 145300
+2022-02-27 05:39:17,244 - trainer - INFO - Train Epoch: 43 [1024/1116 (94%)]	lr: 0.001500	Loss: 15.901034	Oracle:                 12.575870	Clf: 3.264939	Reg: 0.060225	Fr: 0.136600	Steps: 146100
+2022-02-27 05:40:02,028 - trainer - INFO - 
+Test set: Average loss: 0.1593, Accuracy: 278/288 (96.528%)
+
+2022-02-27 05:40:02,030 - trainer - INFO - time taken = 505.10348987579346
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 05:42:07,959 - trainer - INFO - Train Epoch: 44 [256/1116 (24%)]	lr: 0.001500	Loss: 17.764100	Oracle:                 14.173991	Clf: 3.543964	Reg: 0.046146	Fr: 0.139275	Steps: 147100
+2022-02-27 05:44:02,202 - trainer - INFO - Train Epoch: 44 [512/1116 (47%)]	lr: 0.001500	Loss: 15.916391	Oracle:                 12.670358	Clf: 3.191886	Reg: 0.054147	Fr: 0.137899	Steps: 147900
+2022-02-27 05:45:54,482 - trainer - INFO - Train Epoch: 44 [768/1116 (71%)]	lr: 0.001500	Loss: 15.883776	Oracle:                 12.571044	Clf: 3.251216	Reg: 0.061516	Fr: 0.135334	Steps: 148700
+2022-02-27 05:47:47,733 - trainer - INFO - Train Epoch: 44 [1024/1116 (94%)]	lr: 0.001500	Loss: 15.807236	Oracle:                 12.581205	Clf: 3.174999	Reg: 0.051032	Fr: 0.140463	Steps: 149500
+2022-02-27 05:48:30,759 - trainer - INFO - 
+Test set: Average loss: 0.2131, Accuracy: 270/288 (93.750%)
+
+2022-02-27 05:48:30,759 - trainer - INFO - time taken = 508.31387090682983
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 05:50:35,288 - trainer - INFO - Train Epoch: 45 [256/1116 (24%)]	lr: 0.001500	Loss: 17.756455	Oracle:                 14.142387	Clf: 3.558120	Reg: 0.055948	Fr: 0.141888	Steps: 150500
+2022-02-27 05:52:28,735 - trainer - INFO - Train Epoch: 45 [512/1116 (47%)]	lr: 0.001500	Loss: 15.758114	Oracle:                 12.509712	Clf: 3.201378	Reg: 0.047024	Fr: 0.143195	Steps: 151300
+2022-02-27 05:54:21,445 - trainer - INFO - Train Epoch: 45 [768/1116 (71%)]	lr: 0.001500	Loss: 15.940518	Oracle:                 12.565071	Clf: 3.312877	Reg: 0.062570	Fr: 0.145146	Steps: 152100
+2022-02-27 05:56:13,916 - trainer - INFO - Train Epoch: 45 [1024/1116 (94%)]	lr: 0.001500	Loss: 16.053798	Oracle:                 12.732151	Clf: 3.268612	Reg: 0.053035	Fr: 0.138950	Steps: 152900
+2022-02-27 05:57:01,537 - trainer - INFO - 
+Test set: Average loss: 0.2147, Accuracy: 271/288 (94.097%)
+
+2022-02-27 05:57:01,538 - trainer - INFO - time taken = 510.5211100578308
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 05:59:07,960 - trainer - INFO - Train Epoch: 46 [256/1116 (24%)]	lr: 0.001500	Loss: 17.903093	Oracle:                 14.231004	Clf: 3.619511	Reg: 0.052577	Fr: 0.141443	Steps: 153900
+2022-02-27 06:00:58,809 - trainer - INFO - Train Epoch: 46 [512/1116 (47%)]	lr: 0.001500	Loss: 15.909773	Oracle:                 12.510882	Clf: 3.330378	Reg: 0.068513	Fr: 0.136050	Steps: 154700
+2022-02-27 06:02:50,242 - trainer - INFO - Train Epoch: 46 [768/1116 (71%)]	lr: 0.001500	Loss: 15.826209	Oracle:                 12.559360	Clf: 3.220841	Reg: 0.046009	Fr: 0.133499	Steps: 155500
+2022-02-27 06:04:44,104 - trainer - INFO - Train Epoch: 46 [1024/1116 (94%)]	lr: 0.001500	Loss: 15.784748	Oracle:                 12.600911	Clf: 3.140776	Reg: 0.043061	Fr: 0.132181	Steps: 156300
+2022-02-27 06:05:28,171 - trainer - INFO - 
+Test set: Average loss: 0.2958, Accuracy: 260/288 (90.278%)
+
+2022-02-27 06:05:28,180 - trainer - INFO - time taken = 506.35854601860046
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 06:07:32,218 - trainer - INFO - Train Epoch: 47 [256/1116 (24%)]	lr: 0.001500	Loss: 17.675211	Oracle:                 13.947682	Clf: 3.663848	Reg: 0.063681	Fr: 0.139624	Steps: 157300
+2022-02-27 06:09:23,012 - trainer - INFO - Train Epoch: 47 [512/1116 (47%)]	lr: 0.001500	Loss: 15.816448	Oracle:                 12.520827	Clf: 3.233731	Reg: 0.061889	Fr: 0.133475	Steps: 158100
+2022-02-27 06:11:14,153 - trainer - INFO - Train Epoch: 47 [768/1116 (71%)]	lr: 0.001500	Loss: 15.665123	Oracle:                 12.494940	Clf: 3.117803	Reg: 0.052380	Fr: 0.146959	Steps: 158900
+2022-02-27 06:13:06,795 - trainer - INFO - Train Epoch: 47 [1024/1116 (94%)]	lr: 0.001500	Loss: 15.556287	Oracle:                 12.449687	Clf: 3.060309	Reg: 0.046291	Fr: 0.144016	Steps: 159700
+2022-02-27 06:13:49,517 - trainer - INFO - 
+Test set: Average loss: 0.2047, Accuracy: 271/288 (94.097%)
+
+2022-02-27 06:13:49,526 - trainer - INFO - time taken = 501.0946509838104
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 06:15:54,349 - trainer - INFO - Train Epoch: 48 [256/1116 (24%)]	lr: 0.001500	Loss: 17.676469	Oracle:                 13.992227	Clf: 3.620985	Reg: 0.063258	Fr: 0.142627	Steps: 160700
+2022-02-27 06:17:46,028 - trainer - INFO - Train Epoch: 48 [512/1116 (47%)]	lr: 0.001500	Loss: 15.714303	Oracle:                 12.554013	Clf: 3.113485	Reg: 0.046805	Fr: 0.135895	Steps: 161500
+2022-02-27 06:19:38,388 - trainer - INFO - Train Epoch: 48 [768/1116 (71%)]	lr: 0.001500	Loss: 15.667955	Oracle:                 12.412976	Clf: 3.186236	Reg: 0.068743	Fr: 0.142212	Steps: 162300
+2022-02-27 06:21:29,326 - trainer - INFO - Train Epoch: 48 [1024/1116 (94%)]	lr: 0.001500	Loss: 15.550451	Oracle:                 12.397222	Clf: 3.108089	Reg: 0.045140	Fr: 0.141881	Steps: 163100
+2022-02-27 06:22:13,707 - trainer - INFO - 
+Test set: Average loss: 0.2400, Accuracy: 270/288 (93.750%)
+
+2022-02-27 06:22:13,716 - trainer - INFO - time taken = 503.93270993232727
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 06:24:19,217 - trainer - INFO - Train Epoch: 49 [256/1116 (24%)]	lr: 0.001500	Loss: 17.495847	Oracle:                 13.933622	Clf: 3.504752	Reg: 0.057472	Fr: 0.134032	Steps: 164100
+2022-02-27 06:26:11,714 - trainer - INFO - Train Epoch: 49 [512/1116 (47%)]	lr: 0.001500	Loss: 15.689562	Oracle:                 12.469983	Clf: 3.163862	Reg: 0.055717	Fr: 0.138689	Steps: 164900
+2022-02-27 06:28:04,788 - trainer - INFO - Train Epoch: 49 [768/1116 (71%)]	lr: 0.001500	Loss: 15.719288	Oracle:                 12.538467	Clf: 3.133646	Reg: 0.047175	Fr: 0.140777	Steps: 165700
+2022-02-27 06:29:56,881 - trainer - INFO - Train Epoch: 49 [1024/1116 (94%)]	lr: 0.001500	Loss: 15.687638	Oracle:                 12.450503	Clf: 3.184035	Reg: 0.053100	Fr: 0.137646	Steps: 166500
+2022-02-27 06:30:39,522 - trainer - INFO - 
+Test set: Average loss: 0.3363, Accuracy: 262/288 (90.972%)
+
+2022-02-27 06:30:39,532 - trainer - INFO - time taken = 505.56885743141174
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 06:32:45,390 - trainer - INFO - Train Epoch: 50 [256/1116 (24%)]	lr: 0.001500	Loss: 17.625451	Oracle:                 13.930375	Clf: 3.624799	Reg: 0.070277	Fr: 0.147054	Steps: 167500
+2022-02-27 06:34:38,392 - trainer - INFO - Train Epoch: 50 [512/1116 (47%)]	lr: 0.001500	Loss: 15.686028	Oracle:                 12.565516	Clf: 3.071341	Reg: 0.049171	Fr: 0.140340	Steps: 168300
+2022-02-27 06:36:34,172 - trainer - INFO - Train Epoch: 50 [768/1116 (71%)]	lr: 0.001500	Loss: 15.737920	Oracle:                 12.571351	Clf: 3.117437	Reg: 0.049131	Fr: 0.141267	Steps: 169100
+2022-02-27 06:38:26,991 - trainer - INFO - Train Epoch: 50 [1024/1116 (94%)]	lr: 0.001500	Loss: 15.659751	Oracle:                 12.430745	Clf: 3.176221	Reg: 0.052785	Fr: 0.138811	Steps: 169900
+2022-02-27 06:39:09,690 - trainer - INFO - 
+Test set: Average loss: 0.2246, Accuracy: 269/288 (93.403%)
+
+2022-02-27 06:39:09,690 - trainer - INFO - time taken = 509.9103331565857
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 06:41:14,628 - trainer - INFO - Train Epoch: 51 [256/1116 (24%)]	lr: 0.000750	Loss: 17.676656	Oracle:                 14.070140	Clf: 3.572331	Reg: 0.034185	Fr: 0.138877	Steps: 170900
+2022-02-27 06:43:05,946 - trainer - INFO - Train Epoch: 51 [512/1116 (47%)]	lr: 0.000750	Loss: 15.440008	Oracle:                 12.428320	Clf: 2.992158	Reg: 0.019531	Fr: 0.133609	Steps: 171700
+2022-02-27 06:44:58,353 - trainer - INFO - Train Epoch: 51 [768/1116 (71%)]	lr: 0.000750	Loss: 15.587883	Oracle:                 12.446744	Clf: 3.114136	Reg: 0.027003	Fr: 0.136195	Steps: 172500
+2022-02-27 06:46:51,436 - trainer - INFO - Train Epoch: 51 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.467358	Oracle:                 12.382501	Clf: 3.059551	Reg: 0.025306	Fr: 0.137886	Steps: 173300
+2022-02-27 06:47:35,386 - trainer - INFO - 
+Test set: Average loss: 0.2855, Accuracy: 266/288 (92.361%)
+
+2022-02-27 06:47:35,386 - trainer - INFO - time taken = 505.40137815475464
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 06:49:41,347 - trainer - INFO - Train Epoch: 52 [256/1116 (24%)]	lr: 0.000750	Loss: 17.357487	Oracle:                 13.916108	Clf: 3.408444	Reg: 0.032935	Fr: 0.145097	Steps: 174300
+2022-02-27 06:51:31,995 - trainer - INFO - Train Epoch: 52 [512/1116 (47%)]	lr: 0.000750	Loss: 15.445576	Oracle:                 12.314311	Clf: 3.104433	Reg: 0.026831	Fr: 0.139332	Steps: 175100
+2022-02-27 06:53:26,123 - trainer - INFO - Train Epoch: 52 [768/1116 (71%)]	lr: 0.000750	Loss: 15.422362	Oracle:                 12.412365	Clf: 2.985617	Reg: 0.024381	Fr: 0.141132	Steps: 175900
+2022-02-27 06:55:16,766 - trainer - INFO - Train Epoch: 52 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.632902	Oracle:                 12.363114	Clf: 3.229148	Reg: 0.040640	Fr: 0.139959	Steps: 176700
+2022-02-27 06:55:59,146 - trainer - INFO - 
+Test set: Average loss: 0.2331, Accuracy: 267/288 (92.708%)
+
+2022-02-27 06:55:59,146 - trainer - INFO - time taken = 503.518917798996
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 06:58:05,036 - trainer - INFO - Train Epoch: 53 [256/1116 (24%)]	lr: 0.000750	Loss: 17.205136	Oracle:                 13.830967	Clf: 3.351345	Reg: 0.022824	Fr: 0.138381	Steps: 177700
+2022-02-27 06:59:59,798 - trainer - INFO - Train Epoch: 53 [512/1116 (47%)]	lr: 0.000750	Loss: 15.559556	Oracle:                 12.443060	Clf: 3.087321	Reg: 0.029176	Fr: 0.143894	Steps: 178500
+2022-02-27 07:01:51,281 - trainer - INFO - Train Epoch: 53 [768/1116 (71%)]	lr: 0.000750	Loss: 15.518656	Oracle:                 12.403657	Clf: 3.083940	Reg: 0.031059	Fr: 0.144787	Steps: 179300
+2022-02-27 07:03:43,468 - trainer - INFO - Train Epoch: 53 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.589884	Oracle:                 12.456986	Clf: 3.107496	Reg: 0.025401	Fr: 0.137887	Steps: 180100
+2022-02-27 07:04:27,063 - trainer - INFO - 
+Test set: Average loss: 0.2023, Accuracy: 273/288 (94.792%)
+
+2022-02-27 07:04:27,072 - trainer - INFO - time taken = 507.6833999156952
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 07:06:35,046 - trainer - INFO - Train Epoch: 54 [256/1116 (24%)]	lr: 0.000750	Loss: 17.434516	Oracle:                 13.923330	Clf: 3.475550	Reg: 0.035635	Fr: 0.138116	Steps: 181100
+2022-02-27 07:08:28,625 - trainer - INFO - Train Epoch: 54 [512/1116 (47%)]	lr: 0.000750	Loss: 15.481698	Oracle:                 12.426640	Clf: 3.032276	Reg: 0.022783	Fr: 0.138362	Steps: 181900
+2022-02-27 07:10:21,225 - trainer - INFO - Train Epoch: 54 [768/1116 (71%)]	lr: 0.000750	Loss: 15.579960	Oracle:                 12.394408	Clf: 3.156727	Reg: 0.028825	Fr: 0.132887	Steps: 182700
+2022-02-27 07:12:13,971 - trainer - INFO - Train Epoch: 54 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.423513	Oracle:                 12.318436	Clf: 3.075420	Reg: 0.029656	Fr: 0.140683	Steps: 183500
+2022-02-27 07:12:57,098 - trainer - INFO - 
+Test set: Average loss: 0.2822, Accuracy: 268/288 (93.056%)
+
+2022-02-27 07:12:57,098 - trainer - INFO - time taken = 509.7739796638489
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 07:14:59,893 - trainer - INFO - Train Epoch: 55 [256/1116 (24%)]	lr: 0.000750	Loss: 17.405732	Oracle:                 13.872610	Clf: 3.501851	Reg: 0.031271	Fr: 0.141546	Steps: 184500
+2022-02-27 07:16:50,970 - trainer - INFO - Train Epoch: 55 [512/1116 (47%)]	lr: 0.000750	Loss: 15.413689	Oracle:                 12.396224	Clf: 2.991355	Reg: 0.026110	Fr: 0.132585	Steps: 185300
+2022-02-27 07:18:43,545 - trainer - INFO - Train Epoch: 55 [768/1116 (71%)]	lr: 0.000750	Loss: 15.251662	Oracle:                 12.238480	Clf: 2.986548	Reg: 0.026635	Fr: 0.142671	Steps: 186100
+2022-02-27 07:20:37,018 - trainer - INFO - Train Epoch: 55 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.438123	Oracle:                 12.374903	Clf: 3.034616	Reg: 0.028604	Fr: 0.134172	Steps: 186900
+2022-02-27 07:21:19,520 - trainer - INFO - 
+Test set: Average loss: 0.3221, Accuracy: 266/288 (92.361%)
+
+2022-02-27 07:21:19,521 - trainer - INFO - time taken = 502.1668212413788
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 07:23:25,469 - trainer - INFO - Train Epoch: 56 [256/1116 (24%)]	lr: 0.000750	Loss: 17.401021	Oracle:                 13.894704	Clf: 3.475861	Reg: 0.030456	Fr: 0.133995	Steps: 187900
+2022-02-27 07:25:18,678 - trainer - INFO - Train Epoch: 56 [512/1116 (47%)]	lr: 0.000750	Loss: 15.412790	Oracle:                 12.324045	Clf: 3.061885	Reg: 0.026861	Fr: 0.141818	Steps: 188700
+2022-02-27 07:27:10,872 - trainer - INFO - Train Epoch: 56 [768/1116 (71%)]	lr: 0.000750	Loss: 15.305828	Oracle:                 12.261417	Clf: 3.017464	Reg: 0.026947	Fr: 0.134565	Steps: 189500
+2022-02-27 07:29:05,283 - trainer - INFO - Train Epoch: 56 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.304582	Oracle:                 12.302207	Clf: 2.976671	Reg: 0.025705	Fr: 0.138327	Steps: 190300
+2022-02-27 07:29:49,863 - trainer - INFO - 
+Test set: Average loss: 0.2572, Accuracy: 269/288 (93.403%)
+
+2022-02-27 07:29:49,872 - trainer - INFO - time taken = 510.1074426174164
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 07:31:55,631 - trainer - INFO - Train Epoch: 57 [256/1116 (24%)]	lr: 0.000750	Loss: 17.241066	Oracle:                 13.830272	Clf: 3.376151	Reg: 0.034642	Fr: 0.139576	Steps: 191300
+2022-02-27 07:33:48,220 - trainer - INFO - Train Epoch: 57 [512/1116 (47%)]	lr: 0.000750	Loss: 15.333646	Oracle:                 12.321526	Clf: 2.988071	Reg: 0.024049	Fr: 0.140679	Steps: 192100
+2022-02-27 07:35:41,664 - trainer - INFO - Train Epoch: 57 [768/1116 (71%)]	lr: 0.000750	Loss: 15.260644	Oracle:                 12.246722	Clf: 2.978728	Reg: 0.035194	Fr: 0.132771	Steps: 192900
+2022-02-27 07:37:34,102 - trainer - INFO - Train Epoch: 57 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.364329	Oracle:                 12.305993	Clf: 3.026865	Reg: 0.031471	Fr: 0.134503	Steps: 193700
+2022-02-27 07:38:16,935 - trainer - INFO - 
+Test set: Average loss: 0.2131, Accuracy: 271/288 (94.097%)
+
+2022-02-27 07:38:16,935 - trainer - INFO - time taken = 506.82410526275635
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 07:40:22,942 - trainer - INFO - Train Epoch: 58 [256/1116 (24%)]	lr: 0.000750	Loss: 17.168453	Oracle:                 13.795819	Clf: 3.343664	Reg: 0.028970	Fr: 0.140322	Steps: 194700
+2022-02-27 07:42:15,910 - trainer - INFO - Train Epoch: 58 [512/1116 (47%)]	lr: 0.000750	Loss: 15.276272	Oracle:                 12.244152	Clf: 2.999680	Reg: 0.032440	Fr: 0.143216	Steps: 195500
+2022-02-27 07:44:05,418 - trainer - INFO - Train Epoch: 58 [768/1116 (71%)]	lr: 0.000750	Loss: 15.266523	Oracle:                 12.228836	Clf: 3.011251	Reg: 0.026436	Fr: 0.133142	Steps: 196300
+2022-02-27 07:45:58,753 - trainer - INFO - Train Epoch: 58 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.381510	Oracle:                 12.288525	Clf: 3.063404	Reg: 0.029581	Fr: 0.135198	Steps: 197100
+2022-02-27 07:46:47,125 - trainer - INFO - 
+Test set: Average loss: 0.1904, Accuracy: 271/288 (94.097%)
+
+2022-02-27 07:46:47,135 - trainer - INFO - time taken = 509.94119215011597
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 07:48:53,623 - trainer - INFO - Train Epoch: 59 [256/1116 (24%)]	lr: 0.000750	Loss: 17.254366	Oracle:                 13.808863	Clf: 3.412824	Reg: 0.032680	Fr: 0.130973	Steps: 198100
+2022-02-27 07:50:45,431 - trainer - INFO - Train Epoch: 59 [512/1116 (47%)]	lr: 0.000750	Loss: 15.380834	Oracle:                 12.352609	Clf: 3.004019	Reg: 0.024205	Fr: 0.133700	Steps: 198900
+2022-02-27 07:52:38,630 - trainer - INFO - Train Epoch: 59 [768/1116 (71%)]	lr: 0.000750	Loss: 15.288868	Oracle:                 12.323748	Clf: 2.940178	Reg: 0.024942	Fr: 0.138126	Steps: 199700
+2022-02-27 07:54:31,599 - trainer - INFO - Train Epoch: 59 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.296039	Oracle:                 12.199014	Clf: 3.058058	Reg: 0.038967	Fr: 0.135958	Steps: 200500
+2022-02-27 07:55:16,049 - trainer - INFO - 
+Test set: Average loss: 0.2723, Accuracy: 269/288 (93.403%)
+
+2022-02-27 07:55:16,051 - trainer - INFO - time taken = 508.6544189453125
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 07:57:20,719 - trainer - INFO - Train Epoch: 60 [256/1116 (24%)]	lr: 0.000750	Loss: 17.072918	Oracle:                 13.725855	Clf: 3.317579	Reg: 0.029485	Fr: 0.139424	Steps: 201500
+2022-02-27 07:59:10,187 - trainer - INFO - Train Epoch: 60 [512/1116 (47%)]	lr: 0.000750	Loss: 15.320949	Oracle:                 12.283822	Clf: 3.010416	Reg: 0.026711	Fr: 0.138902	Steps: 202300
+2022-02-27 08:01:02,415 - trainer - INFO - Train Epoch: 60 [768/1116 (71%)]	lr: 0.000750	Loss: 15.208886	Oracle:                 12.241095	Clf: 2.938762	Reg: 0.029028	Fr: 0.139862	Steps: 203100
+2022-02-27 08:02:55,224 - trainer - INFO - Train Epoch: 60 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.374654	Oracle:                 12.433714	Clf: 2.919267	Reg: 0.021673	Fr: 0.134783	Steps: 203900
+2022-02-27 08:03:37,841 - trainer - INFO - 
+Test set: Average loss: 0.2695, Accuracy: 270/288 (93.750%)
+
+2022-02-27 08:03:37,841 - trainer - INFO - time taken = 501.5318818092346
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 08:05:44,079 - trainer - INFO - Train Epoch: 61 [256/1116 (24%)]	lr: 0.000750	Loss: 17.159614	Oracle:                 13.779052	Clf: 3.350702	Reg: 0.029860	Fr: 0.139689	Steps: 204900
+2022-02-27 08:07:36,687 - trainer - INFO - Train Epoch: 61 [512/1116 (47%)]	lr: 0.000750	Loss: 15.401458	Oracle:                 12.240156	Clf: 3.124215	Reg: 0.037087	Fr: 0.142554	Steps: 205700
+2022-02-27 08:09:28,395 - trainer - INFO - Train Epoch: 61 [768/1116 (71%)]	lr: 0.000750	Loss: 15.298525	Oracle:                 12.310359	Clf: 2.962198	Reg: 0.025969	Fr: 0.140209	Steps: 206500
+2022-02-27 08:11:19,838 - trainer - INFO - Train Epoch: 61 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.217698	Oracle:                 12.242423	Clf: 2.945397	Reg: 0.029878	Fr: 0.136018	Steps: 207300
+2022-02-27 08:12:04,302 - trainer - INFO - 
+Test set: Average loss: 0.3904, Accuracy: 262/288 (90.972%)
+
+2022-02-27 08:12:04,302 - trainer - INFO - time taken = 506.20239877700806
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 08:14:09,916 - trainer - INFO - Train Epoch: 62 [256/1116 (24%)]	lr: 0.000750	Loss: 17.340778	Oracle:                 13.851309	Clf: 3.447058	Reg: 0.042411	Fr: 0.137615	Steps: 208300
+2022-02-27 08:16:00,514 - trainer - INFO - Train Epoch: 62 [512/1116 (47%)]	lr: 0.000750	Loss: 15.296104	Oracle:                 12.307737	Clf: 2.959538	Reg: 0.028829	Fr: 0.143067	Steps: 209100
+2022-02-27 08:17:52,649 - trainer - INFO - Train Epoch: 62 [768/1116 (71%)]	lr: 0.000750	Loss: 15.198832	Oracle:                 12.194882	Clf: 2.977801	Reg: 0.026150	Fr: 0.137784	Steps: 209900
+2022-02-27 08:19:44,419 - trainer - INFO - Train Epoch: 62 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.237628	Oracle:                 12.254702	Clf: 2.950782	Reg: 0.032143	Fr: 0.137019	Steps: 210700
+2022-02-27 08:20:28,749 - trainer - INFO - 
+Test set: Average loss: 0.2727, Accuracy: 269/288 (93.403%)
+
+2022-02-27 08:20:28,749 - trainer - INFO - time taken = 504.18433451652527
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 08:22:35,014 - trainer - INFO - Train Epoch: 63 [256/1116 (24%)]	lr: 0.000750	Loss: 17.175007	Oracle:                 13.800424	Clf: 3.340798	Reg: 0.033785	Fr: 0.137559	Steps: 211700
+2022-02-27 08:24:25,480 - trainer - INFO - Train Epoch: 63 [512/1116 (47%)]	lr: 0.000750	Loss: 15.352980	Oracle:                 12.316338	Clf: 3.008377	Reg: 0.028265	Fr: 0.137985	Steps: 212500
+2022-02-27 08:26:16,773 - trainer - INFO - Train Epoch: 63 [768/1116 (71%)]	lr: 0.000750	Loss: 15.268485	Oracle:                 12.231595	Clf: 3.006410	Reg: 0.030480	Fr: 0.138048	Steps: 213300
+2022-02-27 08:28:11,166 - trainer - INFO - Train Epoch: 63 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.275822	Oracle:                 12.171726	Clf: 3.067218	Reg: 0.036878	Fr: 0.139930	Steps: 214100
+2022-02-27 08:28:54,178 - trainer - INFO - 
+Test set: Average loss: 0.3037, Accuracy: 263/288 (91.319%)
+
+2022-02-27 08:28:54,178 - trainer - INFO - time taken = 505.1689600944519
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 08:31:01,378 - trainer - INFO - Train Epoch: 64 [256/1116 (24%)]	lr: 0.000750	Loss: 17.134999	Oracle:                 13.807059	Clf: 3.299723	Reg: 0.028217	Fr: 0.136972	Steps: 215100
+2022-02-27 08:32:51,419 - trainer - INFO - Train Epoch: 64 [512/1116 (47%)]	lr: 0.000750	Loss: 15.143004	Oracle:                 12.193840	Clf: 2.922795	Reg: 0.026368	Fr: 0.137188	Steps: 215900
+2022-02-27 08:34:44,132 - trainer - INFO - Train Epoch: 64 [768/1116 (71%)]	lr: 0.000750	Loss: 15.223760	Oracle:                 12.160842	Clf: 3.019017	Reg: 0.043901	Fr: 0.136162	Steps: 216700
+2022-02-27 08:36:36,416 - trainer - INFO - Train Epoch: 64 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.467559	Oracle:                 12.472403	Clf: 2.966185	Reg: 0.028971	Fr: 0.138416	Steps: 217500
+2022-02-27 08:37:20,007 - trainer - INFO - 
+Test set: Average loss: 0.2635, Accuracy: 268/288 (93.056%)
+
+2022-02-27 08:37:20,007 - trainer - INFO - time taken = 505.57333517074585
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 08:39:25,146 - trainer - INFO - Train Epoch: 65 [256/1116 (24%)]	lr: 0.000750	Loss: 17.232778	Oracle:                 13.825875	Clf: 3.371058	Reg: 0.035845	Fr: 0.136813	Steps: 218500
+2022-02-27 08:41:15,828 - trainer - INFO - Train Epoch: 65 [512/1116 (47%)]	lr: 0.000750	Loss: 15.206869	Oracle:                 12.256798	Clf: 2.920275	Reg: 0.029796	Fr: 0.142887	Steps: 219300
+2022-02-27 08:43:09,336 - trainer - INFO - Train Epoch: 65 [768/1116 (71%)]	lr: 0.000750	Loss: 15.324423	Oracle:                 12.241030	Clf: 3.048866	Reg: 0.034528	Fr: 0.139407	Steps: 220100
+2022-02-27 08:45:02,566 - trainer - INFO - Train Epoch: 65 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.187045	Oracle:                 12.247507	Clf: 2.913329	Reg: 0.026209	Fr: 0.138797	Steps: 220900
+2022-02-27 08:45:45,991 - trainer - INFO - 
+Test set: Average loss: 0.3714, Accuracy: 262/288 (90.972%)
+
+2022-02-27 08:45:45,992 - trainer - INFO - time taken = 505.73853492736816
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 08:47:55,140 - trainer - INFO - Train Epoch: 66 [256/1116 (24%)]	lr: 0.000750	Loss: 17.176531	Oracle:                 13.798297	Clf: 3.337597	Reg: 0.040636	Fr: 0.134797	Steps: 221900
+2022-02-27 08:49:49,170 - trainer - INFO - Train Epoch: 66 [512/1116 (47%)]	lr: 0.000750	Loss: 15.189229	Oracle:                 12.230734	Clf: 2.932475	Reg: 0.026019	Fr: 0.145005	Steps: 222700
+2022-02-27 08:51:40,543 - trainer - INFO - Train Epoch: 66 [768/1116 (71%)]	lr: 0.000750	Loss: 15.362706	Oracle:                 12.315031	Clf: 3.016078	Reg: 0.031597	Fr: 0.141277	Steps: 223500
+2022-02-27 08:53:33,839 - trainer - INFO - Train Epoch: 66 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.299961	Oracle:                 12.311340	Clf: 2.959948	Reg: 0.028674	Fr: 0.134096	Steps: 224300
+2022-02-27 08:54:18,998 - trainer - INFO - 
+Test set: Average loss: 0.2218, Accuracy: 272/288 (94.444%)
+
+2022-02-27 08:54:19,000 - trainer - INFO - time taken = 512.7157316207886
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 08:56:28,940 - trainer - INFO - Train Epoch: 67 [256/1116 (24%)]	lr: 0.000750	Loss: 17.026014	Oracle:                 13.712523	Clf: 3.278967	Reg: 0.034524	Fr: 0.136562	Steps: 225300
+2022-02-27 08:58:21,241 - trainer - INFO - Train Epoch: 67 [512/1116 (47%)]	lr: 0.000750	Loss: 15.149060	Oracle:                 12.157121	Clf: 2.967433	Reg: 0.024505	Fr: 0.135957	Steps: 226100
+2022-02-27 09:00:11,984 - trainer - INFO - Train Epoch: 67 [768/1116 (71%)]	lr: 0.000750	Loss: 15.187292	Oracle:                 12.212643	Clf: 2.947550	Reg: 0.027099	Fr: 0.139216	Steps: 226900
+2022-02-27 09:02:03,360 - trainer - INFO - Train Epoch: 67 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.178601	Oracle:                 12.201472	Clf: 2.945595	Reg: 0.031535	Fr: 0.139875	Steps: 227700
+2022-02-27 09:02:47,953 - trainer - INFO - 
+Test set: Average loss: 0.2362, Accuracy: 269/288 (93.403%)
+
+2022-02-27 09:02:47,953 - trainer - INFO - time taken = 508.68875002861023
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 09:04:52,468 - trainer - INFO - Train Epoch: 68 [256/1116 (24%)]	lr: 0.000750	Loss: 17.228061	Oracle:                 13.810675	Clf: 3.384362	Reg: 0.033024	Fr: 0.142958	Steps: 228700
+2022-02-27 09:06:46,245 - trainer - INFO - Train Epoch: 68 [512/1116 (47%)]	lr: 0.000750	Loss: 15.158244	Oracle:                 12.238031	Clf: 2.893927	Reg: 0.026286	Fr: 0.137684	Steps: 229500
+2022-02-27 09:08:39,840 - trainer - INFO - Train Epoch: 68 [768/1116 (71%)]	lr: 0.000750	Loss: 15.326476	Oracle:                 12.234823	Clf: 3.053596	Reg: 0.038058	Fr: 0.134322	Steps: 230300
+2022-02-27 09:10:33,387 - trainer - INFO - Train Epoch: 68 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.300758	Oracle:                 12.296696	Clf: 2.973983	Reg: 0.030079	Fr: 0.143448	Steps: 231100
+2022-02-27 09:11:17,751 - trainer - INFO - 
+Test set: Average loss: 0.3779, Accuracy: 267/288 (92.708%)
+
+2022-02-27 09:11:17,760 - trainer - INFO - time taken = 509.56342363357544
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 09:13:24,479 - trainer - INFO - Train Epoch: 69 [256/1116 (24%)]	lr: 0.000750	Loss: 17.104141	Oracle:                 13.771557	Clf: 3.299394	Reg: 0.033190	Fr: 0.137681	Steps: 232100
+2022-02-27 09:15:16,421 - trainer - INFO - Train Epoch: 69 [512/1116 (47%)]	lr: 0.000750	Loss: 14.997711	Oracle:                 12.034595	Clf: 2.935245	Reg: 0.027871	Fr: 0.141825	Steps: 232900
+2022-02-27 09:17:10,097 - trainer - INFO - Train Epoch: 69 [768/1116 (71%)]	lr: 0.000750	Loss: 15.262467	Oracle:                 12.351308	Clf: 2.882384	Reg: 0.028775	Fr: 0.140610	Steps: 233700
+2022-02-27 09:19:02,130 - trainer - INFO - Train Epoch: 69 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.222562	Oracle:                 12.225501	Clf: 2.971831	Reg: 0.025229	Fr: 0.133715	Steps: 234500
+2022-02-27 09:19:45,328 - trainer - INFO - 
+Test set: Average loss: 0.5144, Accuracy: 246/288 (85.417%)
+
+2022-02-27 09:19:45,329 - trainer - INFO - time taken = 507.31541109085083
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 09:21:51,006 - trainer - INFO - Train Epoch: 70 [256/1116 (24%)]	lr: 0.000750	Loss: 16.913189	Oracle:                 13.589739	Clf: 3.282682	Reg: 0.040767	Fr: 0.137101	Steps: 235500
+2022-02-27 09:23:44,470 - trainer - INFO - Train Epoch: 70 [512/1116 (47%)]	lr: 0.000750	Loss: 15.218810	Oracle:                 12.232758	Clf: 2.954852	Reg: 0.031199	Fr: 0.134201	Steps: 236300
+2022-02-27 09:25:37,082 - trainer - INFO - Train Epoch: 70 [768/1116 (71%)]	lr: 0.000750	Loss: 15.071476	Oracle:                 12.126783	Clf: 2.917362	Reg: 0.027330	Fr: 0.144693	Steps: 237100
+2022-02-27 09:27:30,761 - trainer - INFO - Train Epoch: 70 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.257319	Oracle:                 12.233589	Clf: 2.982400	Reg: 0.041330	Fr: 0.139493	Steps: 237900
+2022-02-27 09:28:13,550 - trainer - INFO - 
+Test set: Average loss: 0.3562, Accuracy: 266/288 (92.361%)
+
+2022-02-27 09:28:13,559 - trainer - INFO - time taken = 507.9797394275665
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 09:30:20,871 - trainer - INFO - Train Epoch: 71 [256/1116 (24%)]	lr: 0.000750	Loss: 16.986483	Oracle:                 13.773397	Clf: 3.191546	Reg: 0.021540	Fr: 0.137066	Steps: 238900
+2022-02-27 09:32:12,140 - trainer - INFO - Train Epoch: 71 [512/1116 (47%)]	lr: 0.000750	Loss: 15.267343	Oracle:                 12.076812	Clf: 3.139348	Reg: 0.051183	Fr: 0.140399	Steps: 239700
+2022-02-27 09:34:04,728 - trainer - INFO - Train Epoch: 71 [768/1116 (71%)]	lr: 0.000750	Loss: 15.269787	Oracle:                 12.227679	Clf: 3.021323	Reg: 0.020785	Fr: 0.138010	Steps: 240500
+2022-02-27 09:35:58,822 - trainer - INFO - Train Epoch: 71 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.199408	Oracle:                 12.194763	Clf: 2.972240	Reg: 0.032405	Fr: 0.138640	Steps: 241300
+2022-02-27 09:36:42,745 - trainer - INFO - 
+Test set: Average loss: 0.2915, Accuracy: 270/288 (93.750%)
+
+2022-02-27 09:36:42,745 - trainer - INFO - time taken = 508.94054985046387
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 09:38:49,803 - trainer - INFO - Train Epoch: 72 [256/1116 (24%)]	lr: 0.000750	Loss: 17.158879	Oracle:                 13.749658	Clf: 3.382126	Reg: 0.027095	Fr: 0.139361	Steps: 242300
+2022-02-27 09:40:42,153 - trainer - INFO - Train Epoch: 72 [512/1116 (47%)]	lr: 0.000750	Loss: 15.132591	Oracle:                 12.220279	Clf: 2.885808	Reg: 0.026504	Fr: 0.141852	Steps: 243100
+2022-02-27 09:42:34,227 - trainer - INFO - Train Epoch: 72 [768/1116 (71%)]	lr: 0.000750	Loss: 15.050134	Oracle:                 12.169383	Clf: 2.855609	Reg: 0.025143	Fr: 0.142251	Steps: 243900
+2022-02-27 09:44:25,759 - trainer - INFO - Train Epoch: 72 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.092937	Oracle:                 12.137123	Clf: 2.929015	Reg: 0.026799	Fr: 0.131723	Steps: 244700
+2022-02-27 09:45:09,384 - trainer - INFO - 
+Test set: Average loss: 0.2862, Accuracy: 271/288 (94.097%)
+
+2022-02-27 09:45:09,393 - trainer - INFO - time taken = 506.39410972595215
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 09:47:15,011 - trainer - INFO - Train Epoch: 73 [256/1116 (24%)]	lr: 0.000750	Loss: 16.962551	Oracle:                 13.604764	Clf: 3.321535	Reg: 0.036252	Fr: 0.144842	Steps: 245700
+2022-02-27 09:49:05,464 - trainer - INFO - Train Epoch: 73 [512/1116 (47%)]	lr: 0.000750	Loss: 15.143265	Oracle:                 12.166286	Clf: 2.942628	Reg: 0.034351	Fr: 0.138316	Steps: 246500
+2022-02-27 09:50:57,390 - trainer - INFO - Train Epoch: 73 [768/1116 (71%)]	lr: 0.000750	Loss: 15.183073	Oracle:                 12.205282	Clf: 2.952281	Reg: 0.025510	Fr: 0.133018	Steps: 247300
+2022-02-27 09:52:49,330 - trainer - INFO - Train Epoch: 73 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.202173	Oracle:                 12.285854	Clf: 2.894516	Reg: 0.021802	Fr: 0.138905	Steps: 248100
+2022-02-27 09:53:32,032 - trainer - INFO - 
+Test set: Average loss: 0.2353, Accuracy: 273/288 (94.792%)
+
+2022-02-27 09:53:32,032 - trainer - INFO - time taken = 502.39733839035034
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 09:55:35,389 - trainer - INFO - Train Epoch: 74 [256/1116 (24%)]	lr: 0.000750	Loss: 17.065210	Oracle:                 13.771984	Clf: 3.268493	Reg: 0.024733	Fr: 0.136633	Steps: 249100
+2022-02-27 09:57:26,958 - trainer - INFO - Train Epoch: 74 [512/1116 (47%)]	lr: 0.000750	Loss: 15.100353	Oracle:                 12.130509	Clf: 2.941907	Reg: 0.027936	Fr: 0.137831	Steps: 249900
+2022-02-27 09:59:17,070 - trainer - INFO - Train Epoch: 74 [768/1116 (71%)]	lr: 0.000750	Loss: 15.169667	Oracle:                 12.188658	Clf: 2.952400	Reg: 0.028609	Fr: 0.140885	Steps: 250700
+2022-02-27 10:01:08,541 - trainer - INFO - Train Epoch: 74 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.160511	Oracle:                 12.252538	Clf: 2.877327	Reg: 0.030646	Fr: 0.141374	Steps: 251500
+2022-02-27 10:01:53,526 - trainer - INFO - 
+Test set: Average loss: 0.1969, Accuracy: 274/288 (95.139%)
+
+2022-02-27 10:01:53,535 - trainer - INFO - time taken = 501.24165630340576
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 10:04:00,752 - trainer - INFO - Train Epoch: 75 [256/1116 (24%)]	lr: 0.000750	Loss: 17.037280	Oracle:                 13.693010	Clf: 3.303981	Reg: 0.040289	Fr: 0.145601	Steps: 252500
+2022-02-27 10:05:52,315 - trainer - INFO - Train Epoch: 75 [512/1116 (47%)]	lr: 0.000750	Loss: 15.171718	Oracle:                 12.231925	Clf: 2.917241	Reg: 0.022552	Fr: 0.141039	Steps: 253300
+2022-02-27 10:07:44,797 - trainer - INFO - Train Epoch: 75 [768/1116 (71%)]	lr: 0.000750	Loss: 15.215779	Oracle:                 12.232746	Clf: 2.956570	Reg: 0.026463	Fr: 0.142382	Steps: 254100
+2022-02-27 10:09:36,530 - trainer - INFO - Train Epoch: 75 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.216186	Oracle:                 12.167168	Clf: 3.013853	Reg: 0.035165	Fr: 0.136742	Steps: 254900
+2022-02-27 10:10:19,270 - trainer - INFO - 
+Test set: Average loss: 0.2700, Accuracy: 268/288 (93.056%)
+
+2022-02-27 10:10:19,270 - trainer - INFO - time taken = 505.48165011405945
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 10:12:22,988 - trainer - INFO - Train Epoch: 76 [256/1116 (24%)]	lr: 0.000750	Loss: 17.068740	Oracle:                 13.731809	Clf: 3.304401	Reg: 0.032530	Fr: 0.142211	Steps: 255900
+2022-02-27 10:14:13,528 - trainer - INFO - Train Epoch: 76 [512/1116 (47%)]	lr: 0.000750	Loss: 15.045370	Oracle:                 12.135300	Clf: 2.884332	Reg: 0.025738	Fr: 0.138450	Steps: 256700
+2022-02-27 10:16:06,733 - trainer - INFO - Train Epoch: 76 [768/1116 (71%)]	lr: 0.000750	Loss: 15.120851	Oracle:                 12.204795	Clf: 2.885270	Reg: 0.030786	Fr: 0.133415	Steps: 257500
+2022-02-27 10:18:01,163 - trainer - INFO - Train Epoch: 76 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.038697	Oracle:                 12.117721	Clf: 2.884850	Reg: 0.036125	Fr: 0.140236	Steps: 258300
+2022-02-27 10:18:43,744 - trainer - INFO - 
+Test set: Average loss: 0.3066, Accuracy: 263/288 (91.319%)
+
+2022-02-27 10:18:43,744 - trainer - INFO - time taken = 504.215452671051
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 10:20:49,159 - trainer - INFO - Train Epoch: 77 [256/1116 (24%)]	lr: 0.000750	Loss: 16.811177	Oracle:                 13.587658	Clf: 3.191617	Reg: 0.031903	Fr: 0.136892	Steps: 259300
+2022-02-27 10:22:40,392 - trainer - INFO - Train Epoch: 77 [512/1116 (47%)]	lr: 0.000750	Loss: 15.055891	Oracle:                 12.122533	Clf: 2.910493	Reg: 0.022865	Fr: 0.136433	Steps: 260100
+2022-02-27 10:24:32,196 - trainer - INFO - Train Epoch: 77 [768/1116 (71%)]	lr: 0.000750	Loss: 15.217176	Oracle:                 12.236831	Clf: 2.943103	Reg: 0.037242	Fr: 0.140751	Steps: 260900
+2022-02-27 10:26:25,761 - trainer - INFO - Train Epoch: 77 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.080747	Oracle:                 12.127837	Clf: 2.923954	Reg: 0.028955	Fr: 0.142732	Steps: 261700
+2022-02-27 10:27:08,850 - trainer - INFO - 
+Test set: Average loss: 0.4121, Accuracy: 264/288 (91.667%)
+
+2022-02-27 10:27:08,850 - trainer - INFO - time taken = 504.8552236557007
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 10:29:12,103 - trainer - INFO - Train Epoch: 78 [256/1116 (24%)]	lr: 0.000750	Loss: 16.917973	Oracle:                 13.631938	Clf: 3.250527	Reg: 0.035509	Fr: 0.135276	Steps: 262700
+2022-02-27 10:31:03,575 - trainer - INFO - Train Epoch: 78 [512/1116 (47%)]	lr: 0.000750	Loss: 15.019923	Oracle:                 12.142438	Clf: 2.849712	Reg: 0.027772	Fr: 0.137119	Steps: 263500
+2022-02-27 10:32:56,106 - trainer - INFO - Train Epoch: 78 [768/1116 (71%)]	lr: 0.000750	Loss: 15.124582	Oracle:                 12.174198	Clf: 2.919396	Reg: 0.030988	Fr: 0.137036	Steps: 264300
+2022-02-27 10:34:49,234 - trainer - INFO - Train Epoch: 78 [1024/1116 (94%)]	lr: 0.000750	Loss: 14.979608	Oracle:                 12.075597	Clf: 2.878454	Reg: 0.025557	Fr: 0.130491	Steps: 265100
+2022-02-27 10:35:32,102 - trainer - INFO - 
+Test set: Average loss: 0.3066, Accuracy: 263/288 (91.319%)
+
+2022-02-27 10:35:32,102 - trainer - INFO - time taken = 502.9997673034668
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 10:37:37,342 - trainer - INFO - Train Epoch: 79 [256/1116 (24%)]	lr: 0.000750	Loss: 17.042621	Oracle:                 13.714727	Clf: 3.287190	Reg: 0.040704	Fr: 0.138059	Steps: 266100
+2022-02-27 10:39:28,302 - trainer - INFO - Train Epoch: 79 [512/1116 (47%)]	lr: 0.000750	Loss: 15.013907	Oracle:                 12.110775	Clf: 2.879868	Reg: 0.023264	Fr: 0.137076	Steps: 266900
+2022-02-27 10:41:20,904 - trainer - INFO - Train Epoch: 79 [768/1116 (71%)]	lr: 0.000750	Loss: 14.966803	Oracle:                 12.043555	Clf: 2.901553	Reg: 0.021695	Fr: 0.141466	Steps: 267700
+2022-02-27 10:43:12,006 - trainer - INFO - Train Epoch: 79 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.005691	Oracle:                 12.107469	Clf: 2.870182	Reg: 0.028039	Fr: 0.138324	Steps: 268500
+2022-02-27 10:43:57,413 - trainer - INFO - 
+Test set: Average loss: 0.2846, Accuracy: 269/288 (93.403%)
+
+2022-02-27 10:43:57,422 - trainer - INFO - time taken = 505.0293369293213
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 10:46:05,703 - trainer - INFO - Train Epoch: 80 [256/1116 (24%)]	lr: 0.000750	Loss: 16.835138	Oracle:                 13.578622	Clf: 3.228645	Reg: 0.027871	Fr: 0.138098	Steps: 269500
+2022-02-27 10:48:00,633 - trainer - INFO - Train Epoch: 80 [512/1116 (47%)]	lr: 0.000750	Loss: 14.992928	Oracle:                 12.063229	Clf: 2.898383	Reg: 0.031316	Fr: 0.148404	Steps: 270300
+2022-02-27 10:49:52,785 - trainer - INFO - Train Epoch: 80 [768/1116 (71%)]	lr: 0.000750	Loss: 15.078978	Oracle:                 12.089696	Clf: 2.952421	Reg: 0.036861	Fr: 0.145042	Steps: 271100
+2022-02-27 10:51:44,771 - trainer - INFO - Train Epoch: 80 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.086510	Oracle:                 12.227302	Clf: 2.839707	Reg: 0.019501	Fr: 0.144023	Steps: 271900
+2022-02-27 10:52:28,368 - trainer - INFO - 
+Test set: Average loss: 0.3428, Accuracy: 267/288 (92.708%)
+
+2022-02-27 10:52:28,368 - trainer - INFO - time taken = 510.7005422115326
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 10:54:35,295 - trainer - INFO - Train Epoch: 81 [256/1116 (24%)]	lr: 0.000750	Loss: 16.935173	Oracle:                 13.576630	Clf: 3.320334	Reg: 0.038210	Fr: 0.131249	Steps: 272900
+2022-02-27 10:56:27,613 - trainer - INFO - Train Epoch: 81 [512/1116 (47%)]	lr: 0.000750	Loss: 15.047507	Oracle:                 12.125351	Clf: 2.893302	Reg: 0.028854	Fr: 0.135104	Steps: 273700
+2022-02-27 10:58:21,011 - trainer - INFO - Train Epoch: 81 [768/1116 (71%)]	lr: 0.000750	Loss: 15.107466	Oracle:                 12.219808	Clf: 2.861012	Reg: 0.026646	Fr: 0.139494	Steps: 274500
+2022-02-27 11:00:15,497 - trainer - INFO - Train Epoch: 81 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.098843	Oracle:                 12.190530	Clf: 2.880674	Reg: 0.027639	Fr: 0.141040	Steps: 275300
+2022-02-27 11:00:58,629 - trainer - INFO - 
+Test set: Average loss: 0.2769, Accuracy: 268/288 (93.056%)
+
+2022-02-27 11:00:58,630 - trainer - INFO - time taken = 510.0097641944885
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 11:03:03,825 - trainer - INFO - Train Epoch: 82 [256/1116 (24%)]	lr: 0.000750	Loss: 16.902483	Oracle:                 13.682240	Clf: 3.197373	Reg: 0.022871	Fr: 0.141515	Steps: 276300
+2022-02-27 11:04:58,055 - trainer - INFO - Train Epoch: 82 [512/1116 (47%)]	lr: 0.000750	Loss: 15.019252	Oracle:                 12.127575	Clf: 2.863854	Reg: 0.027824	Fr: 0.139988	Steps: 277100
+2022-02-27 11:06:50,403 - trainer - INFO - Train Epoch: 82 [768/1116 (71%)]	lr: 0.000750	Loss: 15.075445	Oracle:                 12.117566	Clf: 2.923300	Reg: 0.034579	Fr: 0.144689	Steps: 277900
+2022-02-27 11:08:43,254 - trainer - INFO - Train Epoch: 82 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.042780	Oracle:                 12.073066	Clf: 2.937200	Reg: 0.032515	Fr: 0.149427	Steps: 278700
+2022-02-27 11:09:26,947 - trainer - INFO - 
+Test set: Average loss: 0.2624, Accuracy: 264/288 (91.667%)
+
+2022-02-27 11:09:26,947 - trainer - INFO - time taken = 508.0766613483429
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 11:11:03,158 - trainer - INFO - Train Epoch: 83 [256/1116 (24%)]	lr: 0.000750	Loss: 16.865406	Oracle:                 13.652965	Clf: 3.184413	Reg: 0.028029	Fr: 0.140635	Steps: 279700
+2022-02-27 11:12:51,108 - trainer - INFO - Train Epoch: 83 [512/1116 (47%)]	lr: 0.000750	Loss: 15.013960	Oracle:                 12.122894	Clf: 2.861597	Reg: 0.029470	Fr: 0.138733	Steps: 280500
+2022-02-27 11:14:38,065 - trainer - INFO - Train Epoch: 83 [768/1116 (71%)]	lr: 0.000750	Loss: 15.049223	Oracle:                 12.148488	Clf: 2.874105	Reg: 0.026630	Fr: 0.138110	Steps: 281300
+2022-02-27 11:16:24,835 - trainer - INFO - Train Epoch: 83 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.011174	Oracle:                 12.027523	Clf: 2.949901	Reg: 0.033750	Fr: 0.144104	Steps: 282100
+2022-02-27 11:17:08,622 - trainer - INFO - 
+Test set: Average loss: 0.2262, Accuracy: 272/288 (94.444%)
+
+2022-02-27 11:17:08,622 - trainer - INFO - time taken = 461.42623591423035
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 11:19:12,318 - trainer - INFO - Train Epoch: 84 [256/1116 (24%)]	lr: 0.000750	Loss: 16.920489	Oracle:                 13.591573	Clf: 3.294445	Reg: 0.034471	Fr: 0.139801	Steps: 283100
+2022-02-27 11:21:01,208 - trainer - INFO - Train Epoch: 84 [512/1116 (47%)]	lr: 0.000750	Loss: 14.916516	Oracle:                 12.009964	Clf: 2.875827	Reg: 0.030725	Fr: 0.142173	Steps: 283900
+2022-02-27 11:22:50,670 - trainer - INFO - Train Epoch: 84 [768/1116 (71%)]	lr: 0.000750	Loss: 14.994484	Oracle:                 12.098147	Clf: 2.874785	Reg: 0.021551	Fr: 0.137109	Steps: 284700
+2022-02-27 11:24:37,477 - trainer - INFO - Train Epoch: 84 [1024/1116 (94%)]	lr: 0.000750	Loss: 14.962224	Oracle:                 12.083688	Clf: 2.852236	Reg: 0.026300	Fr: 0.138731	Steps: 285500
+2022-02-27 11:25:22,302 - trainer - INFO - 
+Test set: Average loss: 0.2051, Accuracy: 271/288 (94.097%)
+
+2022-02-27 11:25:22,311 - trainer - INFO - time taken = 493.44027972221375
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 11:27:23,646 - trainer - INFO - Train Epoch: 85 [256/1116 (24%)]	lr: 0.000750	Loss: 16.768945	Oracle:                 13.478542	Clf: 3.252874	Reg: 0.037529	Fr: 0.139395	Steps: 286500
+2022-02-27 11:29:13,379 - trainer - INFO - Train Epoch: 85 [512/1116 (47%)]	lr: 0.000750	Loss: 15.005666	Oracle:                 12.111111	Clf: 2.865074	Reg: 0.029480	Fr: 0.142799	Steps: 287300
+2022-02-27 11:31:01,697 - trainer - INFO - Train Epoch: 85 [768/1116 (71%)]	lr: 0.000750	Loss: 14.855410	Oracle:                 11.958236	Clf: 2.865242	Reg: 0.031932	Fr: 0.137695	Steps: 288100
+2022-02-27 11:32:52,635 - trainer - INFO - Train Epoch: 85 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.009349	Oracle:                 12.125513	Clf: 2.859347	Reg: 0.024488	Fr: 0.140273	Steps: 288900
+2022-02-27 11:33:35,775 - trainer - INFO - 
+Test set: Average loss: 0.2028, Accuracy: 269/288 (93.403%)
+
+2022-02-27 11:33:35,776 - trainer - INFO - time taken = 493.2168638706207
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 11:35:38,070 - trainer - INFO - Train Epoch: 86 [256/1116 (24%)]	lr: 0.000750	Loss: 16.769643	Oracle:                 13.536020	Clf: 3.207415	Reg: 0.026209	Fr: 0.137697	Steps: 289900
+2022-02-27 11:37:27,136 - trainer - INFO - Train Epoch: 86 [512/1116 (47%)]	lr: 0.000750	Loss: 14.922001	Oracle:                 12.029807	Clf: 2.861045	Reg: 0.031150	Fr: 0.144441	Steps: 290700
+2022-02-27 11:39:15,933 - trainer - INFO - Train Epoch: 86 [768/1116 (71%)]	lr: 0.000750	Loss: 14.923065	Oracle:                 12.061127	Clf: 2.836794	Reg: 0.025145	Fr: 0.134910	Steps: 291500
+2022-02-27 11:41:03,686 - trainer - INFO - Train Epoch: 86 [1024/1116 (94%)]	lr: 0.000750	Loss: 14.853561	Oracle:                 11.901204	Clf: 2.908312	Reg: 0.044045	Fr: 0.138603	Steps: 292300
+2022-02-27 11:41:46,675 - trainer - INFO - 
+Test set: Average loss: 0.2338, Accuracy: 270/288 (93.750%)
+
+2022-02-27 11:41:46,677 - trainer - INFO - time taken = 490.63390946388245
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 11:43:49,321 - trainer - INFO - Train Epoch: 87 [256/1116 (24%)]	lr: 0.000750	Loss: 16.696217	Oracle:                 13.473681	Clf: 3.192882	Reg: 0.029655	Fr: 0.145973	Steps: 293300
+2022-02-27 11:45:36,405 - trainer - INFO - Train Epoch: 87 [512/1116 (47%)]	lr: 0.000750	Loss: 14.908363	Oracle:                 11.915843	Clf: 2.954108	Reg: 0.038412	Fr: 0.137038	Steps: 294100
+2022-02-27 11:47:27,746 - trainer - INFO - Train Epoch: 87 [768/1116 (71%)]	lr: 0.000750	Loss: 14.936649	Oracle:                 12.033498	Clf: 2.875909	Reg: 0.027243	Fr: 0.138678	Steps: 294900
+2022-02-27 11:49:18,119 - trainer - INFO - Train Epoch: 87 [1024/1116 (94%)]	lr: 0.000750	Loss: 14.862500	Oracle:                 11.943191	Clf: 2.895965	Reg: 0.023344	Fr: 0.139599	Steps: 295700
+2022-02-27 11:50:01,317 - trainer - INFO - 
+Test set: Average loss: 0.2205, Accuracy: 274/288 (95.139%)
+
+2022-02-27 11:50:01,326 - trainer - INFO - time taken = 494.3971402645111
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 11:52:04,629 - trainer - INFO - Train Epoch: 88 [256/1116 (24%)]	lr: 0.000750	Loss: 16.772652	Oracle:                 13.450283	Clf: 3.283527	Reg: 0.038841	Fr: 0.137977	Steps: 296700
+2022-02-27 11:53:54,386 - trainer - INFO - Train Epoch: 88 [512/1116 (47%)]	lr: 0.000750	Loss: 14.833745	Oracle:                 11.941381	Clf: 2.866644	Reg: 0.025719	Fr: 0.134626	Steps: 297500
+2022-02-27 11:55:40,588 - trainer - INFO - Train Epoch: 88 [768/1116 (71%)]	lr: 0.000750	Loss: 14.903088	Oracle:                 11.969996	Clf: 2.903307	Reg: 0.029785	Fr: 0.148047	Steps: 298300
+2022-02-27 11:57:28,322 - trainer - INFO - Train Epoch: 88 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.108898	Oracle:                 12.186583	Clf: 2.894967	Reg: 0.027348	Fr: 0.126063	Steps: 299100
+2022-02-27 11:58:11,685 - trainer - INFO - 
+Test set: Average loss: 0.2447, Accuracy: 272/288 (94.444%)
+
+2022-02-27 11:58:11,686 - trainer - INFO - time taken = 490.1015431880951
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 12:00:13,173 - trainer - INFO - Train Epoch: 89 [256/1116 (24%)]	lr: 0.000750	Loss: 16.706170	Oracle:                 13.501440	Clf: 3.173127	Reg: 0.031603	Fr: 0.137618	Steps: 300100
+2022-02-27 12:02:01,443 - trainer - INFO - Train Epoch: 89 [512/1116 (47%)]	lr: 0.000750	Loss: 15.010300	Oracle:                 12.081706	Clf: 2.902907	Reg: 0.025687	Fr: 0.145989	Steps: 300900
+2022-02-27 12:03:50,363 - trainer - INFO - Train Epoch: 89 [768/1116 (71%)]	lr: 0.000750	Loss: 14.837763	Oracle:                 11.871879	Clf: 2.920719	Reg: 0.045166	Fr: 0.141227	Steps: 301700
+2022-02-27 12:05:30,553 - trainer - INFO - Train Epoch: 89 [1024/1116 (94%)]	lr: 0.000750	Loss: 14.780986	Oracle:                 11.904661	Clf: 2.859041	Reg: 0.017284	Fr: 0.144452	Steps: 302500
+2022-02-27 12:06:14,137 - trainer - INFO - 
+Test set: Average loss: 0.2249, Accuracy: 269/288 (93.403%)
+
+2022-02-27 12:06:14,139 - trainer - INFO - time taken = 482.2103226184845
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 12:08:17,539 - trainer - INFO - Train Epoch: 90 [256/1116 (24%)]	lr: 0.000750	Loss: 16.604166	Oracle:                 13.398714	Clf: 3.171880	Reg: 0.033572	Fr: 0.138995	Steps: 303500
+2022-02-27 12:10:06,669 - trainer - INFO - Train Epoch: 90 [512/1116 (47%)]	lr: 0.000750	Loss: 14.726454	Oracle:                 11.887026	Clf: 2.814971	Reg: 0.024457	Fr: 0.142311	Steps: 304300
+2022-02-27 12:11:57,018 - trainer - INFO - Train Epoch: 90 [768/1116 (71%)]	lr: 0.000750	Loss: 14.827794	Oracle:                 11.888469	Clf: 2.894227	Reg: 0.045098	Fr: 0.139983	Steps: 305100
+2022-02-27 12:13:45,845 - trainer - INFO - Train Epoch: 90 [1024/1116 (94%)]	lr: 0.000750	Loss: 14.999984	Oracle:                 12.088849	Clf: 2.885172	Reg: 0.025963	Fr: 0.134231	Steps: 305900
+2022-02-27 12:14:30,347 - trainer - INFO - 
+Test set: Average loss: 0.2757, Accuracy: 266/288 (92.361%)
+
+2022-02-27 12:14:30,348 - trainer - INFO - time taken = 495.96067357063293
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 12:16:35,133 - trainer - INFO - Train Epoch: 91 [256/1116 (24%)]	lr: 0.000750	Loss: 16.625231	Oracle:                 13.437814	Clf: 3.161481	Reg: 0.025936	Fr: 0.142081	Steps: 306900
+2022-02-27 12:18:27,336 - trainer - INFO - Train Epoch: 91 [512/1116 (47%)]	lr: 0.000750	Loss: 14.635399	Oracle:                 11.795622	Clf: 2.805816	Reg: 0.033960	Fr: 0.134003	Steps: 307700
+2022-02-27 12:20:19,259 - trainer - INFO - Train Epoch: 91 [768/1116 (71%)]	lr: 0.000750	Loss: 14.807873	Oracle:                 11.951116	Clf: 2.828828	Reg: 0.027929	Fr: 0.135515	Steps: 308500
+2022-02-27 12:22:10,175 - trainer - INFO - Train Epoch: 91 [1024/1116 (94%)]	lr: 0.000750	Loss: 14.908918	Oracle:                 12.047924	Clf: 2.829757	Reg: 0.031237	Fr: 0.135460	Steps: 309300
+2022-02-27 12:22:54,791 - trainer - INFO - 
+Test set: Average loss: 0.2588, Accuracy: 269/288 (93.403%)
+
+2022-02-27 12:22:54,792 - trainer - INFO - time taken = 504.1909682750702
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 12:24:58,932 - trainer - INFO - Train Epoch: 92 [256/1116 (24%)]	lr: 0.000750	Loss: 16.635615	Oracle:                 13.421427	Clf: 3.177894	Reg: 0.036294	Fr: 0.141075	Steps: 310300
+2022-02-27 12:26:49,154 - trainer - INFO - Train Epoch: 92 [512/1116 (47%)]	lr: 0.000750	Loss: 14.791376	Oracle:                 11.999169	Clf: 2.778376	Reg: 0.013831	Fr: 0.134662	Steps: 311100
+2022-02-27 12:28:40,478 - trainer - INFO - Train Epoch: 92 [768/1116 (71%)]	lr: 0.000750	Loss: 14.977569	Oracle:                 12.019694	Clf: 2.913248	Reg: 0.044627	Fr: 0.137104	Steps: 311900
+2022-02-27 12:30:32,577 - trainer - INFO - Train Epoch: 92 [1024/1116 (94%)]	lr: 0.000750	Loss: 14.729455	Oracle:                 11.863328	Clf: 2.843411	Reg: 0.022715	Fr: 0.143091	Steps: 312700
+2022-02-27 12:31:14,406 - trainer - INFO - 
+Test set: Average loss: 0.3488, Accuracy: 265/288 (92.014%)
+
+2022-02-27 12:31:14,415 - trainer - INFO - time taken = 499.37636947631836
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 12:33:17,323 - trainer - INFO - Train Epoch: 93 [256/1116 (24%)]	lr: 0.000750	Loss: 16.801512	Oracle:                 13.521547	Clf: 3.245650	Reg: 0.034315	Fr: 0.137687	Steps: 313700
+2022-02-27 12:35:09,901 - trainer - INFO - Train Epoch: 93 [512/1116 (47%)]	lr: 0.000750	Loss: 14.789210	Oracle:                 12.002661	Clf: 2.765328	Reg: 0.021221	Fr: 0.137982	Steps: 314500
+2022-02-27 12:37:00,899 - trainer - INFO - Train Epoch: 93 [768/1116 (71%)]	lr: 0.000750	Loss: 14.713629	Oracle:                 11.842594	Clf: 2.836459	Reg: 0.034576	Fr: 0.139184	Steps: 315300
+2022-02-27 12:38:49,584 - trainer - INFO - Train Epoch: 93 [1024/1116 (94%)]	lr: 0.000750	Loss: 14.872070	Oracle:                 11.933246	Clf: 2.896289	Reg: 0.042536	Fr: 0.142333	Steps: 316100
+2022-02-27 12:39:33,493 - trainer - INFO - 
+Test set: Average loss: 0.3658, Accuracy: 263/288 (91.319%)
+
+2022-02-27 12:39:33,495 - trainer - INFO - time taken = 498.83349895477295
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 12:41:35,239 - trainer - INFO - Train Epoch: 94 [256/1116 (24%)]	lr: 0.000750	Loss: 16.628592	Oracle:                 13.402210	Clf: 3.196982	Reg: 0.029400	Fr: 0.142636	Steps: 317100
+2022-02-27 12:43:27,151 - trainer - INFO - Train Epoch: 94 [512/1116 (47%)]	lr: 0.000750	Loss: 14.759308	Oracle:                 11.878477	Clf: 2.845787	Reg: 0.035045	Fr: 0.145692	Steps: 317900
+2022-02-27 12:45:19,184 - trainer - INFO - Train Epoch: 94 [768/1116 (71%)]	lr: 0.000750	Loss: 14.885632	Oracle:                 11.996986	Clf: 2.858333	Reg: 0.030313	Fr: 0.140695	Steps: 318700
+2022-02-27 12:47:06,885 - trainer - INFO - Train Epoch: 94 [1024/1116 (94%)]	lr: 0.000750	Loss: 14.929279	Oracle:                 12.039320	Clf: 2.868016	Reg: 0.021943	Fr: 0.146673	Steps: 319500
+2022-02-27 12:47:51,598 - trainer - INFO - 
+Test set: Average loss: 0.2078, Accuracy: 274/288 (95.139%)
+
+2022-02-27 12:47:51,598 - trainer - INFO - time taken = 497.8537828922272
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 12:49:55,754 - trainer - INFO - Train Epoch: 95 [256/1116 (24%)]	lr: 0.000750	Loss: 16.574286	Oracle:                 13.383608	Clf: 3.164592	Reg: 0.026086	Fr: 0.143084	Steps: 320500
+2022-02-27 12:51:46,808 - trainer - INFO - Train Epoch: 95 [512/1116 (47%)]	lr: 0.000750	Loss: 14.820083	Oracle:                 11.944881	Clf: 2.837821	Reg: 0.037382	Fr: 0.143394	Steps: 321300
+2022-02-27 12:53:36,063 - trainer - INFO - Train Epoch: 95 [768/1116 (71%)]	lr: 0.000750	Loss: 14.679512	Oracle:                 11.810295	Clf: 2.843881	Reg: 0.025336	Fr: 0.136584	Steps: 322100
+2022-02-27 12:55:25,836 - trainer - INFO - Train Epoch: 95 [1024/1116 (94%)]	lr: 0.000750	Loss: 14.786746	Oracle:                 11.877021	Clf: 2.865780	Reg: 0.043945	Fr: 0.138858	Steps: 322900
+2022-02-27 12:56:09,510 - trainer - INFO - 
+Test set: Average loss: 0.2290, Accuracy: 271/288 (94.097%)
+
+2022-02-27 12:56:09,510 - trainer - INFO - time taken = 497.65438532829285
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 12:58:13,232 - trainer - INFO - Train Epoch: 96 [256/1116 (24%)]	lr: 0.000750	Loss: 16.617002	Oracle:                 13.457397	Clf: 3.135366	Reg: 0.024239	Fr: 0.141739	Steps: 323900
+2022-02-27 13:00:04,492 - trainer - INFO - Train Epoch: 96 [512/1116 (47%)]	lr: 0.000750	Loss: 14.670433	Oracle:                 11.843177	Clf: 2.795967	Reg: 0.031289	Fr: 0.144087	Steps: 324700
+2022-02-27 13:01:54,259 - trainer - INFO - Train Epoch: 96 [768/1116 (71%)]	lr: 0.000750	Loss: 14.758053	Oracle:                 11.872975	Clf: 2.848930	Reg: 0.036149	Fr: 0.137643	Steps: 325500
+2022-02-27 13:03:42,159 - trainer - INFO - Train Epoch: 96 [1024/1116 (94%)]	lr: 0.000750	Loss: 15.138784	Oracle:                 12.042166	Clf: 3.062909	Reg: 0.033708	Fr: 0.140972	Steps: 326300
+2022-02-27 13:04:25,309 - trainer - INFO - 
+Test set: Average loss: 0.2661, Accuracy: 268/288 (93.056%)
+
+2022-02-27 13:04:25,318 - trainer - INFO - time taken = 495.5593616962433
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 13:06:26,845 - trainer - INFO - Train Epoch: 97 [256/1116 (24%)]	lr: 0.000750	Loss: 16.575128	Oracle:                 13.377773	Clf: 3.170554	Reg: 0.026800	Fr: 0.142729	Steps: 327300
+2022-02-27 13:08:16,096 - trainer - INFO - Train Epoch: 97 [512/1116 (47%)]	lr: 0.000750	Loss: 14.783322	Oracle:                 11.909770	Clf: 2.840580	Reg: 0.032972	Fr: 0.141830	Steps: 328100
+2022-02-27 13:10:07,518 - trainer - INFO - Train Epoch: 97 [768/1116 (71%)]	lr: 0.000750	Loss: 14.893928	Oracle:                 11.987304	Clf: 2.880692	Reg: 0.025932	Fr: 0.138271	Steps: 328900
+2022-02-27 13:11:58,004 - trainer - INFO - Train Epoch: 97 [1024/1116 (94%)]	lr: 0.000750	Loss: 14.837575	Oracle:                 11.910240	Clf: 2.889879	Reg: 0.037457	Fr: 0.137356	Steps: 329700
+2022-02-27 13:12:42,462 - trainer - INFO - 
+Test set: Average loss: 0.3340, Accuracy: 265/288 (92.014%)
+
+2022-02-27 13:12:42,471 - trainer - INFO - time taken = 496.8938801288605
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 13:14:47,209 - trainer - INFO - Train Epoch: 98 [256/1116 (24%)]	lr: 0.000750	Loss: 16.538849	Oracle:                 13.327197	Clf: 3.177014	Reg: 0.034638	Fr: 0.143696	Steps: 330700
+2022-02-27 13:16:36,462 - trainer - INFO - Train Epoch: 98 [512/1116 (47%)]	lr: 0.000750	Loss: 14.820320	Oracle:                 11.915845	Clf: 2.876327	Reg: 0.028148	Fr: 0.137706	Steps: 331500
+2022-02-27 13:18:24,337 - trainer - INFO - Train Epoch: 98 [768/1116 (71%)]	lr: 0.000750	Loss: 14.947656	Oracle:                 11.977926	Clf: 2.933106	Reg: 0.036625	Fr: 0.136978	Steps: 332300
+2022-02-27 13:20:14,899 - trainer - INFO - Train Epoch: 98 [1024/1116 (94%)]	lr: 0.000750	Loss: 14.860711	Oracle:                 12.035495	Clf: 2.794929	Reg: 0.030287	Fr: 0.138829	Steps: 333100
+2022-02-27 13:20:58,499 - trainer - INFO - 
+Test set: Average loss: 0.2634, Accuracy: 270/288 (93.750%)
+
+2022-02-27 13:20:58,499 - trainer - INFO - time taken = 495.77163648605347
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 13:23:02,732 - trainer - INFO - Train Epoch: 99 [256/1116 (24%)]	lr: 0.000750	Loss: 16.626525	Oracle:                 13.371623	Clf: 3.214392	Reg: 0.040510	Fr: 0.142663	Steps: 334100
+2022-02-27 13:24:52,601 - trainer - INFO - Train Epoch: 99 [512/1116 (47%)]	lr: 0.000750	Loss: 14.855815	Oracle:                 12.006687	Clf: 2.819283	Reg: 0.029845	Fr: 0.140528	Steps: 334900
+2022-02-27 13:26:39,728 - trainer - INFO - Train Epoch: 99 [768/1116 (71%)]	lr: 0.000750	Loss: 14.806329	Oracle:                 11.943650	Clf: 2.830579	Reg: 0.032101	Fr: 0.139138	Steps: 335700
+2022-02-27 13:28:31,665 - trainer - INFO - Train Epoch: 99 [1024/1116 (94%)]	lr: 0.000750	Loss: 14.785216	Oracle:                 11.921816	Clf: 2.836481	Reg: 0.026919	Fr: 0.135557	Steps: 336500
+2022-02-27 13:29:14,843 - trainer - INFO - 
+Test set: Average loss: 0.3762, Accuracy: 265/288 (92.014%)
+
+2022-02-27 13:29:14,843 - trainer - INFO - time taken = 496.0979187488556
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 13:31:20,823 - trainer - INFO - Train Epoch: 100 [256/1116 (24%)]	lr: 0.000750	Loss: 16.629221	Oracle:                 13.423563	Clf: 3.171844	Reg: 0.033814	Fr: 0.137128	Steps: 337500
+2022-02-27 13:33:10,770 - trainer - INFO - Train Epoch: 100 [512/1116 (47%)]	lr: 0.000750	Loss: 14.739933	Oracle:                 11.919558	Clf: 2.793947	Reg: 0.026428	Fr: 0.139567	Steps: 338300
+2022-02-27 13:34:58,244 - trainer - INFO - Train Epoch: 100 [768/1116 (71%)]	lr: 0.000750	Loss: 14.798407	Oracle:                 11.954219	Clf: 2.811743	Reg: 0.032445	Fr: 0.137505	Steps: 339100
+2022-02-27 13:36:47,766 - trainer - INFO - Train Epoch: 100 [1024/1116 (94%)]	lr: 0.000750	Loss: 14.819226	Oracle:                 11.854597	Clf: 2.915827	Reg: 0.048801	Fr: 0.141932	Steps: 339900
+2022-02-27 13:37:31,401 - trainer - INFO - 
+Test set: Average loss: 0.2903, Accuracy: 269/288 (93.403%)
+
+2022-02-27 13:37:31,410 - trainer - INFO - time taken = 496.3040716648102
+saving at  ./models/DVS-Gesture-nhid-512-parts-28-optim-Adamax-B-32-E-100-K-1-alpha-0.1-beta-0.5_snnl4v4_checkpoint.pth.tar
+2022-02-27 13:38:00,025 - trainer - INFO - 
+Test set: Average loss: 0.3052, Accuracy: 269/288 (93.403%)

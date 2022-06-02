@@ -1,0 +1,9 @@
+chair 118 127 150 177
+chair 159 130 197 175 difficult
+chair 80 128 118 177
+chair 53 127 86 179
+chair 33 130 57 176 difficult
+chair 314 136 390 178 difficult
+chair 296 133 348 176 difficult
+chair 281 130 341 176 difficult
+chair 255 126 320 177

@@ -1,0 +1,7 @@
+dog 48 47 243 240
+sofa 1 120 498 369
+person 215 96 496 369
+person 107 138 440 369
+pottedplant 327 3 401 104
+person 404 50 472 73 difficult
+sofa 395 61 498 95 difficult

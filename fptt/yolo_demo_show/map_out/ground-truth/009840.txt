@@ -1,0 +1,5 @@
+tvmonitor 100 67 423 324
+person 181 114 245 235
+person 115 131 186 236
+person 267 159 314 233 difficult
+bottle 1 206 26 358

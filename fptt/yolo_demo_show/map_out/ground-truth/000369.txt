@@ -1,0 +1,5 @@
+bottle 181 259 216 375
+diningtable 26 275 468 375 difficult
+person 96 89 429 277
+person 231 91 500 375
+person 1 92 120 375

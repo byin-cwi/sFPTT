@@ -1,0 +1,3 @@
+sofa 53 180 326 317
+sofa 203 179 355 242 difficult
+sofa 292 171 366 217 difficult

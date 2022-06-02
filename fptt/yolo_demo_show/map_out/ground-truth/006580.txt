@@ -1,0 +1,20 @@
+dog 375 240 415 283
+dog 186 256 245 322 difficult
+dog 119 235 188 291
+dog 114 226 178 287
+dog 92 220 125 273
+dog 143 209 168 229 difficult
+dog 89 202 122 223 difficult
+dog 82 202 92 212 difficult
+dog 1 284 37 375 difficult
+person 434 195 487 291
+person 363 180 380 218
+person 318 177 361 293
+person 266 178 277 217
+person 210 167 277 345
+person 171 167 217 262
+person 9 159 93 375
+person 12 174 31 205 difficult
+person 77 174 92 202 difficult
+person 97 184 114 227 difficult
+person 119 195 145 229 difficult

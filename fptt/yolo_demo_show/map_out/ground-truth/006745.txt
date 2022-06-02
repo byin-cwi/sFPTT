@@ -1,0 +1,6 @@
+tvmonitor 249 142 288 172 difficult
+chair 263 189 347 264
+chair 171 212 265 296 difficult
+chair 159 156 203 211
+sofa 82 165 159 239 difficult
+chair 102 218 178 320

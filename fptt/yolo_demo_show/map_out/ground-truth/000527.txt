@@ -1,0 +1,18 @@
+person 384 160 426 238
+person 359 143 401 211 difficult
+person 232 156 286 254
+person 154 163 222 261
+person 53 82 86 149
+person 101 125 128 159 difficult
+person 129 121 153 159 difficult
+person 208 136 238 181 difficult
+person 344 132 358 191 difficult
+person 327 146 346 186 difficult
+person 441 142 460 181 difficult
+bicycle 145 208 259 293
+bicycle 219 194 323 263
+bicycle 369 194 452 259
+bicycle 350 170 412 220
+person 492 149 500 170 difficult
+person 480 149 493 184 difficult
+person 467 146 480 186 difficult
