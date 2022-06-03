@@ -39,13 +39,7 @@ class YOLO(object):
         #   验证集损失较低不代表mAP较高，仅代表该权值在验证集上泛化性能较好。
         #   如果出现shape不匹配，同时要注意训练时的model_path和classes_path参数的修改
         #--------------------------------------------------------------------------#
-        # "model_path"        : 'model_data/yolov4_tiny_weights_voc.pth',
-        # "model_path"      : 'logs/ep050-loss35.940-val_loss6.345.pth',
-        # "model_path"      : 'logs/ep050-loss20.409-val_loss5.886.pth',
-        # "model_path"      : 'logs/ep122-loss22.927-val_loss5.042.pth',
-        # "model_path"      : 'logs/ep171-loss22.551-val_loss4.950.pth', # 4 steps
-        # "model_path"      : 'logs/ep124-loss41.856-val_loss4.475.pth', # 8 step
-        "model_path"        : 'model/ep137-loss51.405-val_loss4.442.pth', # 8 steps
+        "model_path"        : 'model/trained_weight_8step.pth', # 8 steps
         # "classes_path"      : 'model_data/coco_classes.txt',
         "classes_path"      : 'model_data/voc_classes.txt',
         #---------------------------------------------------------------------#

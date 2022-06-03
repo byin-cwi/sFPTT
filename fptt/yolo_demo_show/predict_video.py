@@ -9,7 +9,7 @@ import numpy as np
 from PIL import Image
 
 # from yolo_video1 import YOLO
-from yolo_video3 import YOLO
+from yolo_video2 import YOLO
 
 if __name__ == "__main__":
     yolo = YOLO()
