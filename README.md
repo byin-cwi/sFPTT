@@ -36,14 +36,20 @@ for i in range(sequence_len): # read the sequence
     optimizer.step() # update the network
     post_optimizer_updates( named_params, epoch) # update trace \bar{w} and \delta{l}
 ```
+## Object detection Demo
+----
+You can find the demo of **SP**iking-**Y**OLO (SPYv4) network on following video: 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Ue1_RJVfDcw&ab_channel=BojianYin/0.jpg)](https://www.youtube.com/watch?v=Ue1_RJVfDcw&ab_channel=BojianYin)
 
 ## Running code
+---
 You can find more details in readme file of each task.
 
 Finally, we’d love to hear from you if you have any comments or suggestions.
 
 
 ### References
+----
 
 [1]. https://github.com/bubbliiiing/yolov4-tiny-pytorch
 
@@ -73,4 +79,3 @@ MIT
    [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
    [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
    [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
-
