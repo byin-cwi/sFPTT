@@ -39,7 +39,7 @@ for i in range(sequence_len): # read the sequence
 ## Object detection Demo
 ----
 You can find the demo of **SP**iking-**Y**OLO (SPYv4) network on following video: 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Ue1_RJVfDcw&ab_channel=BojianYin/0.jpg)](https://www.youtube.com/watch?v=Ue1_RJVfDcw&ab_channel=BojianYin)
+[![SPYv4](https://img.youtube.com/vi/Ue1_RJVfDcw&ab_channel=BojianYin/default.jpg)](https://www.youtube.com/watch?v=Ue1_RJVfDcw&ab_channel=BojianYin)
 
 ## Running code
 ---
