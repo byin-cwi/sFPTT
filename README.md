@@ -38,7 +38,8 @@ for i in range(sequence_len): # read the sequence
 ```
 ## Object detection Demo
 ----
-A video demo of **SP**iking-**Y**OLO (SPYv4) : 
+A video demo of **SP**iking-**Y**OLO (SPYv4) :
+
 [![SPYv4](https://i9.ytimg.com/vi_webp/Ue1_RJVfDcw/mqdefault.webp?v=629a1ba9&sqp=CKzo-ZYG&rs=AOn4CLA6pqYdK9OaH4LKNlqGixLDATNG6A)](https://www.youtube.com/watch?v=Ue1_RJVfDcw&ab_channel=BojianYin)
 
 ## Running code
