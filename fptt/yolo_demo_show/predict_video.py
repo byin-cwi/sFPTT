@@ -1,6 +1,7 @@
 #-----------------------------------------------------------------------#
-#   predict.py将单张图片预测、摄像头检测、FPS测试和目录遍历检测等功能
-#   整合到了一个py文件中，通过指定mode进行模式的修改。
+#   predict.py combines single image prediction, camera detection, 
+#   FPS testing and directory traversal detection into a single py file,
+#   which can be modified by specifying "mode".
 #-----------------------------------------------------------------------#
 import time
 
@@ -14,11 +15,11 @@ from yolo_video2 import YOLO
 if __name__ == "__main__":
     yolo = YOLO()
     #----------------------------------------------------------------------------------------------------------#
-    #   mode用于指定测试的模式：
-    #   'predict'表示单张图片预测，如果想对预测过程进行修改，如保存图片，截取对象等，可以先看下方详细的注释
-    #   'video'表示视频检测，可调用摄像头或者视频进行检测，详情查看下方注释。
-    #   'fps'表示测试fps，使用的图片是img里面的street.jpg，详情查看下方注释。
-    #   'dir_predict'表示遍历文件夹进行检测并保存。默认遍历img文件夹，保存img_out文件夹，详情查看下方注释。
+    #   "mode" is used to specify the mode of the test.：
+    #   'predict' means a single image prediction. If you want to modify the prediction process, such as saving images, intercepting objects, etc., you can first read the detailed comments below.
+    #   'video' means video detection, you can call the camera or video for detection, check the comments below for details.
+    #   'fps' means test fps, the image used is street.jpg inside img, check the comments below for details.
+    #   'dir_predict' means traverse the folder to detect and save. Default traverses img folder and saves img_out folder, see comments below for details.
     #----------------------------------------------------------------------------------------------------------#
     # mode = "predict"
     mode = "video"
@@ -35,26 +36,26 @@ if __name__ == "__main__":
     video_save_path = "./img/testv4.1.mp4"
     video_fps       = 60.0
     #-------------------------------------------------------------------------#
-    #   test_interval用于指定测量fps的时候，图片检测的次数
-    #   理论上test_interval越大，fps越准确。
+    #   test_interval is used to specify the number of times the image will be detected when measuring fps.
+    #   Theoretically, the larger the test_interval, the more accurate the fps.
     #-------------------------------------------------------------------------#
     test_interval   = 100
     #-------------------------------------------------------------------------#
-    #   dir_origin_path指定了用于检测的图片的文件夹路径
-    #   dir_save_path指定了检测完图片的保存路径
-    #   dir_origin_path和dir_save_path仅在mode='dir_predict'时有效
+    #   dir_origin_path specifies the folder path of the image to be detected
+    #   dir_save_path specifies the path where the detected images are saved
+    #   dir_origin_path and dir_save_path are only valid when mode='dir_predict'
     #-------------------------------------------------------------------------#
     dir_origin_path = "img/"
     dir_save_path   = "img_out/"
 
     if mode == "predict":
         '''
-        1、如果想要进行检测完的图片的保存，利用r_image.save("img.jpg")即可保存，直接在predict.py里进行修改即可。 
-        2、如果想要获得预测框的坐标，可以进入yolo.detect_image函数，在绘图部分读取top，left，bottom，right这四个值。
-        3、如果想要利用预测框截取下目标，可以进入yolo.detect_image函数，在绘图部分利用获取到的top，left，bottom，right这四个值
-        在原图上利用矩阵的方式进行截取。
-        4、如果想要在预测图上写额外的字，比如检测到的特定目标的数量，可以进入yolo.detect_image函数，在绘图部分对predicted_class进行判断，
-        比如判断if predicted_class == 'car': 即可判断当前目标是否为车，然后记录数量即可。利用draw.text即可写字。
+        1、If you want to save the detected image, you can use r_image.save("img.jpg") to save it and modify it directly in predict.py. 
+        2、If you want to get the coordinates of the prediction box, you can enter the yolo.detect_image function and read the four values of top, left, bottom and right in the drawing section.
+        3、If you want to use the prediction box to intercept the next target, you can enter the yolo.detect_image function, and use the obtained top, left, bottom, right values in the drawing section.
+        on the original map using the matrix to intercept the way.
+        4. If you want to write additional words on the predicted image, such as the number of specific targets detected, you can enter the yolo.detect_image function and make a judgment on the predicted_class in the drawing section.
+        For example, judge if predicted_class == 'car': that is, you can determine whether the current target is a car or not, and then just record the number. Use draw.text to write.
         '''
         while True:
             img = input('Input image filename:')
@@ -79,22 +80,22 @@ if __name__ == "__main__":
         ref, frame = capture.read()
         print('capture video')
         if not ref:
-            raise ValueError("未能正确读取摄像头（视频），请注意是否正确安装摄像头（是否正确填写视频路径）。")
+            raise ValueError("Failure to read the camera (video) correctly, please note whether the camera is installed correctly (whether the video path is filled in correctly).")
 
         fps = 0.0
         while(True):
             t1 = time.time()
-            # 读取某一帧
+            # Read a frame
             ref, frame = capture.read()
             if not ref:
                 break
-            # 格式转变，BGRtoRGB
+            # BGRtoRGB
             frame = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
-            # 转变成Image
+            # to Image
             frame = Image.fromarray(np.uint8(frame))
-            # 进行检测
+            # run detection
             frame = np.array(yolo.detect_image(frame))
-            # RGBtoBGR满足opencv显示格式
+            # RGBtoBGR fit opencv format
             frame = cv2.cvtColor(frame,cv2.COLOR_RGB2BGR)
             frame = cv2.resize(frame,size)
             
