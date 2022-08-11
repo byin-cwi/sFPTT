@@ -1,1 +1,0 @@
-python main_mnist.py --dataset MNIST-10 --permute --parts 28 --batch_size 128
