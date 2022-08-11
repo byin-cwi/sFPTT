@@ -24,13 +24,13 @@ if __name__ == "__main__":
     # mode = "predict"
     mode = "video"
     #----------------------------------------------------------------------------------------------------------#
-    #   video_path用于指定视频的路径，当video_path=0时表示检测摄像头
-    #   想要检测视频，则设置如video_path = "xxx.mp4"即可，代表读取出根目录下的xxx.mp4文件。
-    #   video_save_path表示视频保存的路径，当video_save_path=""时表示不保存
-    #   想要保存视频，则设置如video_save_path = "yyy.mp4"即可，代表保存为根目录下的yyy.mp4文件。
-    #   video_fps用于保存的视频的fps
-    #   video_path、video_save_path和video_fps仅在mode='video'时有效
-    #   保存视频时需要ctrl+c退出或者运行到最后一帧才会完成完整的保存步骤。
+    #   video_path is used to specify the path of the video, when video_path = 0 means detect the camera
+    # video_path = "xxx.mp4" to detect the video, it means read out the xxx.mp4 file in the root directory.
+    # video_save_path means the path to save the video, when video_save_path = "" means no save
+    # video_save_path = "yyyy.mp4" to save the video as yyyy.mp4 file in the root directory.
+    # video_fps is used for the fps of the saved video
+    # video_path, video_save_path and video_fps are only valid when mode='video'
+    # ctrl+c is required to exit or run to the last frame when saving a video to complete the full save step.
     #----------------------------------------------------------------------------------------------------------#
     video_path      = 0
     video_save_path = "./img/testv4.1.mp4"
