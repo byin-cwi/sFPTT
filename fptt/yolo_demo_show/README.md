@@ -1,2 +1,5 @@
-# sFPTT
-FeedForward Propagation Through Time on Spiking Neural Network (SNNs)
+# Spiking YOLO demo
+You can run the demo with camera via 
+```bash 
+python predict_video.py
+```
