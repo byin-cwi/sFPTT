@@ -45,6 +45,11 @@ A video demo of **SP**iking-**Y**OLO (SPYv4) :
 ## Running code
 ---
 You can find more details in readme file of each task.
+1.  [Adding task](https://github.com/byin-cwi/sFPTT/tree/main/fptt/fptt_AddTask)
+2.  [P/S-MNIST task](https://github.com/byin-cwi/sFPTT/tree/main/fptt/fptt_mnist)
+3.  [Image and DVS task](https://github.com/byin-cwi/sFPTT/tree/main/fptt/fptt_img)
+4.  [Spiking YOLO Demo](https://github.com/byin-cwi/sFPTT/tree/main/fptt/yolo_demo_show)
+
 
 Finally, we’d love to hear from you if you have any comments or suggestions.
 
