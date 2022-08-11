@@ -19,19 +19,8 @@ import matplotlib.pyplot as plt
 
 
 from utils import get_xt,update_prob_estimates
-from snn_models_LIF4_save4 import *
-from snn_models_LIF4_save4_l2 import *
-# from snn_models_LIF4_s import *
-# from snn_models_LIF5 import *
-# from snn_models_LIF3 import *
-# from snn_models_LIF4_s2 import *
-# from snn_models_lstm_type1 import *
-# from snn_models_lstm_type2 import *
-# from snn_models_lstm_type3 import *
-# from snn_models_LIF4_deeper import *
-# from snn_models_LIF4_res import *
-# from snn_models_IndRNN import *
-# from snn_models_LIF4_ltcMem import *
+from snn_models_LIF4_save4 import * # single layer
+from snn_models_LIF4_save4_l2 import * # 2 layers
 from datasets import data_generator, adding_problem_generator
 
 
@@ -502,20 +491,6 @@ for epoch in range(1, epochs + 1):
             for param_group in optimizer.param_groups:
                 param_group['lr'] = lr
         
-
-        # if epoch in [50,100]:
-        #     k = max(int(k/2.),1)
-        #     print('new k: ', k)
-
-        # linear lr decay
-        # lr = lr*(1-1./epochs)+1e-6
-        # for param_group in optimizer.param_groups:
-        #     param_group['lr'] = lr
-        # if epoch>0 and epoch%20==0 and epoch<100:
-        #     # Scheduled learning rate decay
-        #     lr /= 5.
-        #     for param_group in optimizer.param_groups:
-        #         param_group['lr'] = lr
             
         # remember best acc@1 and save checkpoint
         is_best = acc1 > best_acc1
