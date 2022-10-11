@@ -22,19 +22,21 @@ This is scientific software, and as such subject to many modifications; we aim t
 ## FPTT posude code
 -----
 ```python
-for i in range(sequence_len): # read the sequence
-    if i ==0:
-        model.init_h(x_in.shape[0]) # At first step initialize the hidden states
-    else:
-        model.h = list(v.detach() for v in model.h) # detach computation graph from previous timestep
-    out = model.forward_t(x_in[:,:,i]) # read input and generate output
-    loss_c = (i)/sequence_len*criterion(out, targets) # get prediction loss 
-    loss_r = get_regularizer_named_params(named_params, _lambda=1.0 ) # get regularizer loss
-    loss = loss_c+loss_r
-    optimizer.zero_grad()
-    loss.backward() # calculate gradient of current timestep
-    optimizer.step() # update the network
-    post_optimizer_updates( named_params, epoch) # update trace \bar{w} and \delta{l}
+for e in range(epochs): # epoch iteration
+    for i in range(sequence_len): # read the sequence
+        if i ==0:
+            model.init_h(x_in.shape[0]) # At first step initialize the hidden states
+        else:
+            model.h = list(v.detach() for v in model.h) # detach computation graph from previous timestep
+        out = model.forward_t(x_in[:,:,i]) # read input and generate output
+        loss_c = (i)/sequence_len*criterion(out, targets) # get prediction loss 
+        loss_r = get_regularizer_named_params(named_params, _lambda=1.0 ) # get regularizer loss
+        loss = loss_c+loss_r
+        optimizer.zero_grad()
+        loss.backward() # calculate gradient of current timestep
+        optimizer.step() # update the network
+        post_optimizer_updates( named_params, epoch) # update trace \bar{w} and \delta{l}
+    reset_named_parameter(named_params) # reset traces
 ```
 ## Object detection Demo
 ----
