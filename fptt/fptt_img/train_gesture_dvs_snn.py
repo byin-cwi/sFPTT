@@ -43,24 +43,6 @@ def get_stats_named_params( model ):
         named_params[name] = (param, sm, lm, dm)
     return named_params
 
-def pre_pre_optimizer_updates( named_params, args ):
-    if not args.debias: return
-    for name in named_params:
-        param, sm, lm, dm = named_params[name]
-        param_data = param.data.clone()
-        param.data.copy_( sm.data )
-        sm.data.copy_( param_data )
-        del param_data
-
-def pre_optimizer_updates( named_params, args ):
-    if not args.debias: return
-    for name in named_params:
-        param, sm, lm, dm = named_params[name]
-        lm.data.copy_( param.grad.detach() )
-        param_data = param.data.clone()
-        param.data.copy_( sm.data )
-        sm.data.copy_( param_data )
-        del param_data
 
 def post_optimizer_updates( named_params, args, epoch ):
     alpha = args.alpha
@@ -175,9 +157,9 @@ def train(epoch, args, train_loader, permute, n_classes, model, named_params, lo
         _PARTS = PARTS
         for p in range(_PARTS):
             if p==0:
-                h = model.init_hidden(data.size(0))
+                h = model.init_hidden(data.size(0)) # initialize the hidden states at first timestep
             else:
-                h = tuple(v.detach() for v in h)
+                h = tuple(v.detach() for v in h) # detach the gradient from previous timestep
             # print([p.shape for p in h])
             if p<PARTS-1:
                 if epoch < 10:
