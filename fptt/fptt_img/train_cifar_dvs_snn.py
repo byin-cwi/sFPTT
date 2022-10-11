@@ -44,24 +44,6 @@ def get_stats_named_params( model ):
         named_params[name] = (param, sm, lm, dm)
     return named_params
 
-def pre_pre_optimizer_updates( named_params, args ):
-    if not args.debias: return
-    for name in named_params:
-        param, sm, lm, dm = named_params[name]
-        param_data = param.data.clone()
-        param.data.copy_( sm.data )
-        sm.data.copy_( param_data )
-        del param_data
-
-def pre_optimizer_updates( named_params, args ):
-    if not args.debias: return
-    for name in named_params:
-        param, sm, lm, dm = named_params[name]
-        lm.data.copy_( param.grad.detach() )
-        param_data = param.data.clone()
-        param.data.copy_( sm.data )
-        sm.data.copy_( param_data )
-        del param_data
 
 def post_optimizer_updates( named_params, args, epoch ):
     alpha = args.alpha
