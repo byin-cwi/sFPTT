@@ -14,10 +14,10 @@ This is scientific software, and as such subject to many modifications; we aim t
 
 ## Requirements
 -----
-0. Pyhton 3.8.10
-1. A working version of python and Pytorch This should be easy: either use the Google Colab facilities, or do a simple installation on your laptop could probabily using pip. ([Start Locally | PyTorch](https://pytorch.org/get-started/locally/)) **torch==1.7.1**
-2. SpikingJelly([SpikingJelly](https://github.com/fangwei123456/spikingjelly))
-3. For object detection taskes, it requires OpenCV 2
+1. Pyhton 3.8.10
+2. A working version of python and Pytorch This should be easy: either use the Google Colab facilities, or do a simple installation on your laptop could probabily using pip. ([Start Locally | PyTorch](https://pytorch.org/get-started/locally/)) **torch==1.7.1**
+3. SpikingJelly([SpikingJelly](https://github.com/fangwei123456/spikingjelly))
+4. For object detection taskes, it requires OpenCV 2
 
 ## FPTT posude code
 -----
