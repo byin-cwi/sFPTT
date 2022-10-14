@@ -2,7 +2,7 @@
 --------------
 
 This repository contains code to reproduce the key findings of "Training spiking neural networks with Forward Porpogation Through Time".
-This code implements the spiking recurrent networks with **Liquid Time-Constant** spiking neurons (LTC) on [Pytorch]([PyTorch](https://pytorch.org/))trained via FPTT for various tasks. The [Notebook](https://github.com/byin-cwi/sFPTT/blob/main/fptt/LTC_example.ipynb)was created to illustrate the funcationality of LTC spiking neurons.
+This code implements the spiking recurrent networks with **Liquid Time-Constant** spiking neurons (LTC) on [Pytorch]([PyTorch](https://pytorch.org/))trained via FPTT for various tasks. The [Notebook](https://github.com/byin-cwi/sFPTT/blob/main/fptt/LTC_example.ipynb) was created to illustrate the funcationality of LTC spiking neurons.
 
 This is scientific software, and as such subject to many modifications; we aim to further improve the software to become more user-friendly and extendible in the future. 
 
